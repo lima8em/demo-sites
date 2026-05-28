@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Что продаётся на TikTok — 20 трендов 2025–2026</title>
+<title>Нишевые "читы" — 20 продуктов TikTok 2025–2026</title>
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #fff; }
@@ -15,423 +15,381 @@
   .badge-orange { background: #3a1500; color: #fb923c; }
   .badge-red { background: #3a0000; color: #f87171; }
   .badge-blue { background: #0c1a3a; color: #60a5fa; }
-  .container { max-width: 1200px; margin: 0 auto; padding: 32px; }
+  .badge-purple { background: #2a1a3a; color: #c084fc; }
+  .container { max-width: 1300px; margin: 0 auto; padding: 32px; }
   .section-title { font-size: 13px; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; margin-top: 40px; }
-
-  /* Controversy block */
-  .controversy-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; margin-bottom: 40px; }
-  .c-card { background: #1a1212; border: 1px solid #3a2020; border-radius: 12px; padding: 20px; }
-  .c-card-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
-  .c-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-  .c-name { font-weight: 700; font-size: 14px; }
-  .c-handle { color: #888; font-size: 12px; margin-top: 2px; }
-  .c-stat { display: flex; gap: 16px; margin-bottom: 12px; }
-  .c-stat-item .val { font-weight: 700; font-size: 15px; color: #fb923c; }
-  .c-stat-item .lbl { font-size: 11px; color: #666; }
-  .c-desc { font-size: 12px; color: #999; line-height: 1.5; margin-bottom: 12px; }
-  .c-slogan { font-size: 12px; font-style: italic; color: #f97316; background: #1f1000; border-radius: 6px; padding: 6px 10px; margin-bottom: 12px; }
-  .tag { display: inline-block; background: #1a1a1a; border: 1px solid #333; border-radius: 5px; padding: 2px 7px; font-size: 11px; color: #888; margin: 2px; }
-  .btn-sm { display: inline-flex; align-items: center; background: #ff2d55; color: #fff; border-radius: 7px; padding: 6px 12px; font-size: 12px; font-weight: 600; text-decoration: none; margin-right: 6px; margin-top: 8px; }
-  .btn-sm-outline { background: transparent; border: 1px solid #333; color: #ccc; }
-
-  /* Main table */
+  .insight-box { background: #111a11; border: 1px solid #1a3a1a; border-radius: 12px; padding: 20px; margin-bottom: 32px; }
+  .insight-box h3 { color: #4ade80; font-size: 14px; margin-bottom: 10px; }
+  .insight-box p { font-size: 13px; color: #aaa; line-height: 1.6; }
+  .insight-box strong { color: #fff; }
   .table-wrap { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; overflow: hidden; margin-bottom: 40px; overflow-x: auto; }
-  table { width: 100%; border-collapse: collapse; min-width: 900px; }
-  thead th { background: #111; padding: 12px 14px; text-align: left; font-size: 11px; color: #666; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #2a2a2a; white-space: nowrap; }
-  tbody td { padding: 12px 14px; border-bottom: 1px solid #1a1a1a; font-size: 13px; vertical-align: middle; }
+  table { width: 100%; border-collapse: collapse; min-width: 1000px; }
+  thead th { background: #111; padding: 12px 14px; text-align: left; font-size: 11px; color: #555; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; border-bottom: 1px solid #2a2a2a; white-space: nowrap; }
+  tbody td { padding: 13px 14px; border-bottom: 1px solid #1e1e1e; font-size: 13px; vertical-align: middle; }
   tbody tr:last-child td { border-bottom: none; }
   tbody tr:hover { background: #1f1f1f; }
+  .row-num { color: #444; font-size: 12px; font-weight: 700; min-width: 28px; }
+  .product-name { font-weight: 700; font-size: 13px; }
+  .product-sub { font-size: 11px; color: #555; margin-top: 3px; }
   .num { font-weight: 700; color: #fff; }
-  .muted { color: #666; font-size: 12px; }
+  .muted { color: #555; font-size: 12px; }
   .conv-high { color: #4ade80; font-weight: 700; }
   .conv-med { color: #fb923c; font-weight: 700; }
-  .conv-low { color: #888; font-weight: 700; }
-  .link { color: #60a5fa; text-decoration: none; font-size: 12px; }
-  .ilink { display: inline-block; background: #ff2d55; color: #fff; border-radius: 6px; padding: 4px 9px; font-size: 11px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .conv-low { color: #666; font-weight: 600; }
+  .hook { font-size: 12px; color: #aaa; font-style: italic; line-height: 1.4; }
+  .ilink { display: inline-block; background: #ff2d55; color: #fff; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 600; text-decoration: none; white-space: nowrap; }
   .ilink:hover { background: #e0003d; }
-  .ilink-store { display: inline-block; background: #1a3a1a; color: #4ade80; border: 1px solid #2a5a2a; border-radius: 6px; padding: 4px 9px; font-size: 11px; font-weight: 600; text-decoration: none; white-space: nowrap; }
-  .ilink-store:hover { background: #223a22; }
-  .product-name { font-weight: 700; font-size: 13px; }
-  .product-sub { font-size: 11px; color: #666; margin-top: 2px; }
-  .row-num { color: #444; font-size: 12px; font-weight: 600; }
-
-  .divider { border: none; border-top: 1px solid #222; margin: 40px 0; }
-  .note { padding: 20px; background: #111; border-radius: 12px; border: 1px solid #222; font-size: 12px; color: #666; margin-top: 8px; }
-  .note strong { color: #aaa; }
+  .ilink-store { display: inline-block; background: #162a16; color: #4ade80; border: 1px solid #2a4a2a; border-radius: 6px; padding: 4px 10px; font-size: 11px; font-weight: 600; text-decoration: none; white-space: nowrap; }
+  .ilink-store:hover { background: #1e3a1e; }
+  .divider { border: none; border-top: 1px solid #1e1e1e; margin: 32px 0; }
+  .note { padding: 18px 20px; background: #111; border-radius: 12px; border: 1px solid #222; font-size: 12px; color: #555; }
+  .note strong { color: #888; }
+  .cat-row { background: #141414; }
+  .cat-row td { padding: 8px 14px; font-size: 11px; font-weight: 700; color: #444; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #1e1e1e; }
 </style>
 </head>
 <body>
 
 <div class="header">
-  <h1>📊 Что продаётся на TikTok — 20 ниш <span class="badge badge-orange">2025–2026</span></h1>
-  <p>Товарка, мерч, controversy продукты · Реальные данные: Printify, Accio, CJ Dropshipping, TikTok Business</p>
+  <h1>🎯 Нишевые "читы" — то что даёт нечестное преимущество <span class="badge badge-orange">2025–2026</span></h1>
+  <p>Рыбалка · Авто · Гольф · Охота · Outdoor · Мерч · Реальные данные и магазины</p>
 </div>
 
 <div class="container">
 
-  <!-- CONTROVERSY MERCH SECTION -->
-  <div class="section-title">🔥 Controversy & Identity мерч — работает на противоречиях</div>
-  <div class="controversy-grid">
-
-    <div class="c-card">
-      <div class="c-card-header">
-        <div class="c-icon" style="background: linear-gradient(135deg, #1d4ed8, #1e40af);">🇪🇺</div>
-        <div>
-          <div class="c-name">Make Europe Great Again</div>
-          <div class="c-handle">@megahat.eu · levelsio.com · megaclothingbrand.com</div>
-        </div>
-      </div>
-      <div class="c-stat">
-        <div class="c-stat-item"><div class="val">167.8K</div><div class="lbl">Лайков на видео</div></div>
-        <div class="c-stat-item"><div class="val">1,427</div><div class="lbl">Комментариев</div></div>
-        <div class="c-stat-item"><div class="val">$29–45</div><div class="lbl">Цена кепки</div></div>
-      </div>
-      <div class="c-slogan">"The Make Europe Great Again Hat — for those who aren't afraid to stand out"</div>
-      <div class="c-desc">Кепка по аналогии с MAGA Трампа, но про Европу. Активен в 2026. Продаётся на Shein, TikTok Shop, независимых сайтах. @levelsio (techno optimist) запустил EU/ACC коллекцию. Работает на волне европейского национализма и реакции на американскую политику.</div>
-      <div><span class="tag">#makeeuropegreatagain</span><span class="tag">#MEGA</span><span class="tag">#euacc</span></div>
-      <a href="https://www.tiktok.com/@megahat.eu/video/7616390291217517846" class="btn-sm" target="_blank">↗ Видео 167K лайков</a>
-      <a href="https://levelsio.com/collections/eu-acc" class="btn-sm btn-sm-outline" target="_blank">🛒 levelsio.com</a>
-    </div>
-
-    <div class="c-card">
-      <div class="c-card-header">
-        <div class="c-icon" style="background: linear-gradient(135deg, #1e3a5f, #1d4ed8);">✡️</div>
-        <div>
-          <div class="c-name">Jewish Identity Merch</div>
-          <div class="c-handle">jdrip.com — Premium Jewish Apparel</div>
-        </div>
-      </div>
-      <div class="c-stat">
-        <div class="c-stat-item"><div class="val">4.7★</div><div class="lbl">117 отзывов</div></div>
-        <div class="c-stat-item"><div class="val">$39–999</div><div class="lbl">Цена</div></div>
-        <div class="c-stat-item"><div class="val">Active</div><div class="lbl">Статус</div></div>
-      </div>
-      <div class="c-slogan">"Am Yisrael Chai" · "Chai" · "IDF" · "Moshiach"</div>
-      <div class="c-desc">100% Cotton USA. Линейки: IDF tees ($39–85), Star of David нашивки, Shema Puffer ($99–175), золотые подвески Shekel/Star of David ($49–999). Post-Oct 7 волна — идентичность как заявление. Работает на гордости, не на ненависти.</div>
-      <div><span class="tag">#jewishpride</span><span class="tag">#amyisraelchai</span><span class="tag">#jewishmerch</span></div>
-      <a href="https://jdrip.com" class="btn-sm" target="_blank">🛒 jdrip.com</a>
-    </div>
-
-    <div class="c-card">
-      <div class="c-card-header">
-        <div class="c-icon" style="background: linear-gradient(135deg, #b45309, #92400e);">🍁</div>
-        <div>
-          <div class="c-name">Canada Is Not For Sale</div>
-          <div class="c-handle">jackpinedynamic.ca · strongandfreehat.ca</div>
-        </div>
-      </div>
-      <div class="c-stat">
-        <div class="c-stat-item"><div class="val">$45</div><div class="lbl">Цена кепки</div></div>
-        <div class="c-stat-item"><div class="val">Вирал</div><div class="lbl">2025</div></div>
-        <div class="c-stat-item"><div class="val">FR+EN</div><div class="lbl">Версии</div></div>
-      </div>
-      <div class="c-slogan">"Canada Is Not For Sale" / "Le Canada n'est pas à vendre"</div>
-      <div class="c-desc">Ответ на заявления Трампа об аннексии Канады. Ottawa-based бренд. Доступен на navy и cranberry. Двуязычная версия для Квебека. Антиамериканский нарратив = чистый nationalism play без токсичности.</div>
-      <div><span class="tag">#canadaisnotforsale</span><span class="tag">#canada</span><span class="tag">#antitrump</span></div>
-      <a href="https://strongandfreehat.ca" class="btn-sm" target="_blank">🛒 Магазин</a>
-    </div>
-
-    <div class="c-card">
-      <div class="c-card-header">
-        <div class="c-icon" style="background: linear-gradient(135deg, #7c3aed, #5b21b6);">🌊</div>
-        <div>
-          <div class="c-name">Gulf of America Merch</div>
-          <div class="c-handle">Trump NRCC Store · Amazon 3rd party</div>
-        </div>
-      </div>
-      <div class="c-stat">
-        <div class="c-stat-item"><div class="val">$35</div><div class="lbl">Цена футболки</div></div>
-        <div class="c-stat-item"><div class="val">2</div><div class="lbl">Версии</div></div>
-        <div class="c-stat-item"><div class="val">Вирал</div><div class="lbl">2025</div></div>
-      </div>
-      <div class="c-slogan">"Greetings from the Gulf of America" · "Make Greenland Great Again"</div>
-      <div class="c-desc">Мерч вокруг заявлений Трампа: Мексиканский залив = Gulf of America, Гренландия, Панамский канал. Официальный NRCC + сторонние продавцы на Amazon. Работает с обеих сторон — и за, и против. Политический момент = instant merch opportunity.</div>
-      <div><span class="tag">#gulfofamerica</span><span class="tag">#makegreenlandgreatagain</span><span class="tag">#trump</span></div>
-      <a href="https://www.tiktok.com/discover/make-europe-great-again-merch" class="btn-sm" target="_blank">↗ TikTok тренд</a>
-    </div>
-
+  <div class="insight-box">
+    <h3>💡 Почему "читы" продаются лучше обычных товаров</h3>
+    <p>Продукт, который даёт <strong>нечестное преимущество</strong> в хобби, продаёт себя сам. Видео-хук: "пришёл на рыбалку с этими очками — увидел рыбу раньше чем она поняла что я её вижу". Зритель немедленно хочет то же самое. Это не просто товар — это <strong>секрет</strong>, который показывают друзьям. Вирал гарантирован.</p>
   </div>
 
-  <div class="divider"></div>
-
-  <!-- MAIN TABLE -->
-  <div class="section-title">📈 20 продуктов с данными — активны прямо сейчас</div>
+  <div class="section-title">20 продуктов с данными</div>
   <div class="table-wrap">
     <table>
       <thead>
         <tr>
           <th>#</th>
-          <th>Продукт / Ниша</th>
-          <th>Категория</th>
-          <th>TikTok показы</th>
-          <th>Конверсия</th>
-          <th>Цена продажи</th>
-          <th>Маржа ~</th>
-          <th>Статус</th>
+          <th>Продукт</th>
+          <th>Ниша</th>
+          <th>Почему вирал / Хук</th>
+          <th>Цена</th>
+          <th>Маржа</th>
+          <th>Данные</th>
           <th>TikTok</th>
           <th>Магазин</th>
         </tr>
       </thead>
       <tbody>
 
+        <tr class="cat-row"><td colspan="9">🎣 РЫБАЛКА</td></tr>
+
         <tr>
           <td class="row-num">01</td>
-          <td><div class="product-name">Cowhide Leather Flip-Flops</div><div class="product-sub">HaLiTa, 3,184 видео на TikTok</div></td>
-          <td><span class="badge badge-orange">Fashion</span></td>
-          <td class="num">709M <span class="muted">продаж/мес</span></td>
-          <td class="conv-high">—</td>
-          <td>$7–18</td>
-          <td class="conv-high">60–70%</td>
-          <td><span class="badge badge-green">🔥 Топ</span></td>
-          <td><a href="https://www.tiktok.com/discover/cowhide-flip-flops" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/cowhide-flip-flops" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Поляризованные очки "вижу рыбу"</div>
+            <div class="product-sub">Gillsee · 96% поляризация · 28г</div>
+          </td>
+          <td><span class="badge badge-blue">Рыбалка</span></td>
+          <td class="hook">"Надел — и вижу рыбу прямо под водой. Это читы, это нечестно"</td>
+          <td>$20–45</td>
+          <td class="conv-high">65–75%</td>
+          <td class="num">Вирал<br><span class="muted">@calculatedsurvival</span></td>
+          <td><a href="https://www.tiktok.com/@gillsee.fish" class="ilink" target="_blank">↗ @gillsee.fish</a></td>
+          <td><a href="https://gillsee.us" class="ilink-store" target="_blank">🛒 gillsee.us</a></td>
         </tr>
 
         <tr>
           <td class="row-num">02</td>
-          <td><div class="product-name">Стикеры (POD)</div><div class="product-sub">Дизайнерские, нишевые, мем-принты</div></td>
-          <td><span class="badge badge-blue">Print-on-Demand</span></td>
-          <td class="num">20M <span class="muted">показов</span></td>
-          <td class="conv-high">68.91%</td>
-          <td>$5–15</td>
+          <td>
+            <div class="product-name">Аттрактант для рыбы ("illegal")</div>
+            <div class="product-sub">Запрещённая приманка · Baitmate · жидкий</div>
+          </td>
+          <td><span class="badge badge-blue">Рыбалка</span></td>
+          <td class="hook">"Illegal fish attractant — рыба клюёт за 30 секунд. Используй пока не запретили"</td>
+          <td>$8–20</td>
           <td class="conv-high">70–80%</td>
-          <td><span class="badge badge-green">🔥 Топ</span></td>
-          <td><a href="https://www.tiktok.com/discover/custom-stickers" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://printify.com/app/products/stickers/" class="ilink-store" target="_blank">🛒 Printify</a></td>
+          <td class="num">TikTok Shop<br><span class="muted">#viralfishing</span></td>
+          <td><a href="https://www.tiktok.com/discover/baitmate-fish-attractant-review" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://shop.tiktok.com/us/k/illegal-fish-attractant" class="ilink-store" target="_blank">🛒 TTS</a></td>
         </tr>
 
         <tr>
           <td class="row-num">03</td>
-          <td><div class="product-name">Make Europe Great Again Cap</div><div class="product-sub">@megahat.eu — 167.8K лайков на видео</div></td>
-          <td><span class="badge badge-red">Controversy</span></td>
-          <td class="num">Вирал</td>
-          <td class="conv-high">—</td>
-          <td>$29–45</td>
-          <td class="conv-high">65–75%</td>
-          <td><span class="badge badge-green">🔥 Активен</span></td>
-          <td><a href="https://www.tiktok.com/@megahat.eu" class="ilink" target="_blank">↗ @megahat.eu</a></td>
-          <td><a href="https://levelsio.com/collections/eu-acc" class="ilink-store" target="_blank">🛒 levelsio.com</a></td>
+          <td>
+            <div class="product-name">Подводная камера для рыбалки</div>
+            <div class="product-sub">CanFish CF1 · AI Fish Finder · real-time</div>
+          </td>
+          <td><span class="badge badge-blue">Рыбалка</span></td>
+          <td class="hook">"Опустил камеру — вижу рыбу в реальном времени. Снял 10M просмотров на одном видео"</td>
+          <td>$35–90</td>
+          <td class="conv-med">55–65%</td>
+          <td class="num">10M+ views<br><span class="muted">canfishcam.com</span></td>
+          <td><a href="https://www.tiktok.com/@ryan_morie/video/7476109515742579999" class="ilink" target="_blank">↗ Видео Фев'25</a></td>
+          <td><a href="https://canfishcam.com" class="ilink-store" target="_blank">🛒 canfishcam.com</a></td>
         </tr>
 
         <tr>
           <td class="row-num">04</td>
-          <td><div class="product-name">Tumbler / Water Bottle</div><div class="product-sub">Stanley-style, кастомные цвета</div></td>
-          <td><span class="badge badge-blue">Lifestyle</span></td>
-          <td class="num">85M <span class="muted">показов</span></td>
-          <td class="conv-med">4.63%</td>
-          <td>$25–55</td>
-          <td class="conv-med">50–65%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/stanley-tumbler" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/tumbler" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Электронная приманка (LED + вибрация)</div>
+            <div class="product-sub">Mimics live bait · разные цвета свечения</div>
+          </td>
+          <td><span class="badge badge-blue">Рыбалка</span></td>
+          <td class="hook">"Обычная наживка vs электронная — рыба бросается на неё за 10 секунд"</td>
+          <td>$5–18</td>
+          <td class="conv-high">70–80%</td>
+          <td class="num">TikTok Shop<br><span class="muted">#electroniclure</span></td>
+          <td><a href="https://www.tiktok.com/discover/electronic-fishing-lure" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://shop.tiktok.com/us/k/electronic-fishing-lure" class="ilink-store" target="_blank">🛒 TTS</a></td>
         </tr>
 
         <tr>
           <td class="row-num">05</td>
-          <td><div class="product-name">Парфюм / Fragrance</div><div class="product-sub">Dupe-парфюмы, нишевые ароматы</div></td>
-          <td><span class="badge badge-orange">Beauty</span></td>
-          <td class="num">34M <span class="muted">показов</span></td>
-          <td class="conv-med">8.00%</td>
-          <td>$20–60</td>
-          <td class="conv-med">55–70%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/perfume-dupe" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/perfume" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Удочка со встроенной камерой</div>
+            <div class="product-sub">Real-time cable · GSValue · "world first"</div>
+          </td>
+          <td><span class="badge badge-blue">Рыбалка</span></td>
+          <td class="hook">"Первая в мире удочка с live-камерой — видишь клёв под водой в реальном времени"</td>
+          <td>$60–120</td>
+          <td class="conv-med">45–55%</td>
+          <td class="num">Pre-orders EU/US<br><span class="muted">Tens of M views</span></td>
+          <td><a href="https://www.tiktok.com/discover/fish-cam" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://westin-fishingcam.com" class="ilink-store" target="_blank">🛒 westin-cam</a></td>
         </tr>
+
+        <tr class="cat-row"><td colspan="9">🚗 АВТО</td></tr>
 
         <tr>
           <td class="row-num">06</td>
-          <td><div class="product-name">Беспроводные наушники</div><div class="product-sub">TWS, open-ear, AirPods dupes</div></td>
-          <td><span class="badge badge-blue">Tech</span></td>
-          <td class="num">22M <span class="muted">показов</span></td>
-          <td class="conv-med">5.50%</td>
-          <td>$15–40</td>
-          <td class="conv-med">50–60%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/wireless-earbuds" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/wireless-earbuds" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Solar освежитель — вертолёт на панели</div>
+            <div class="product-sub">Крутится от солнца · ocean scent · -54% off</div>
+          </td>
+          <td><span class="badge badge-orange">Авто</span></td>
+          <td class="hook">"Поставил на панель — крутится весь день, в машине пахнет морем"</td>
+          <td>$8–18</td>
+          <td class="conv-high">70–80%</td>
+          <td class="num">83K продаж<br><span class="muted">Март 2025</span></td>
+          <td><a href="https://www.tiktok.com/discover/solar-car-dashboard-air-freshener" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://shop.tiktok.com/us/k/tiktok-shop-car-air-freshener" class="ilink-store" target="_blank">🛒 TTS</a></td>
         </tr>
 
         <tr>
           <td class="row-num">07</td>
-          <td><div class="product-name">Стилус ручка (Stylus Pen)</div><div class="product-sub">Android/iOS, 22.5M продаж/мес</div></td>
-          <td><span class="badge badge-blue">Tech</span></td>
-          <td class="num">22.5M <span class="muted">продаж/мес</span></td>
-          <td class="conv-med">—</td>
-          <td>$5–12</td>
-          <td class="conv-high">70–80%</td>
-          <td><span class="badge badge-green">🔥 Топ</span></td>
-          <td><a href="https://www.tiktok.com/discover/stylus-pen" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/stylus-pen" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Ceeniu Smart Car Freshener</div>
+            <div class="product-sub">Ultrasonic mist · умный диффузор в авто</div>
+          </td>
+          <td><span class="badge badge-orange">Авто</span></td>
+          <td class="hook">"Не просто ёлочка — умный диффузор туман в машине. Выглядит как в дорогом отеле"</td>
+          <td>$20–40</td>
+          <td class="conv-med">55–65%</td>
+          <td class="num">TikTok Shop<br><span class="muted">Premium сегмент</span></td>
+          <td><a href="https://www.tiktok.com/discover/tiktok-shop-car-air-freshener" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://shop.tiktok.com/us/k/ceeniu-smart-car-air-fresheners-new-smell-experience-by-ultrasonic-mist" class="ilink-store" target="_blank">🛒 TTS</a></td>
         </tr>
 
         <tr>
           <td class="row-num">08</td>
-          <td><div class="product-name">Oversized Graphic T-shirt</div><div class="product-sub">Bold visuals, niche refs, funny sayings</div></td>
-          <td><span class="badge badge-blue">Print-on-Demand</span></td>
-          <td class="num">774K <span class="muted">показов</span></td>
-          <td class="conv-high">14.67%</td>
-          <td>$25–45</td>
-          <td class="conv-high">60–75%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/graphic-tee" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://printify.com/app/products/t-shirts/" class="ilink-store" target="_blank">🛒 Printify</a></td>
+          <td>
+            <div class="product-name">Детектор скрытых камер</div>
+            <div class="product-sub">Airbnb/отель · RF + инфракрасный сканер</div>
+          </td>
+          <td><span class="badge badge-orange">Авто / EDC</span></td>
+          <td class="hook">"Зашёл в Airbnb — за 2 минуты нашёл 3 скрытых камеры. Теперь всегда беру с собой"</td>
+          <td>$15–35</td>
+          <td class="conv-high">65–75%</td>
+          <td class="num">Вирал<br><span class="muted">#hiddencamera</span></td>
+          <td><a href="https://www.tiktok.com/discover/hidden-camera-detector" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://www.amazon.com/s?k=hidden+camera+detector" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
+
+        <tr class="cat-row"><td colspan="9">⛳ ГОЛЬФ</td></tr>
 
         <tr>
           <td class="row-num">09</td>
-          <td><div class="product-name">Jewish Identity Merch</div><div class="product-sub">jdrip.com — Chai, IDF, Am Yisrael Chai</div></td>
-          <td><span class="badge badge-red">Identity / Pride</span></td>
-          <td class="num">4.7★ <span class="muted">117 отз.</span></td>
-          <td class="conv-high">—</td>
-          <td>$39–175</td>
-          <td class="conv-high">65–80%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/jewish-merch" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://jdrip.com" class="ilink-store" target="_blank">🛒 jdrip.com</a></td>
+          <td>
+            <div class="product-name">Дальномер со склоном (Rangefinder)</div>
+            <div class="product-sub">Acer · slope-adjusted · #1 TikTok Shop</div>
+          </td>
+          <td><span class="badge badge-purple">Гольф</span></td>
+          <td class="hook">"Обычный гольфист vs с дальномером — он выбирает клюшку за 3 секунды и бьёт точно"</td>
+          <td>$40–120</td>
+          <td class="conv-med">45–60%</td>
+          <td class="num">#1 TikTok Shop<br><span class="muted">Golf category</span></td>
+          <td><a href="https://www.tiktok.com/discover/acer-rangefinder-review" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://shop.tiktok.com/us/k/range-finder" class="ilink-store" target="_blank">🛒 TTS</a></td>
         </tr>
 
         <tr>
           <td class="row-num">10</td>
-          <td><div class="product-name">Магнитные ресницы</div><div class="product-sub">Reusable, no-glue, beauty hack</div></td>
-          <td><span class="badge badge-orange">Beauty</span></td>
-          <td class="num">16M <span class="muted">показов</span></td>
-          <td class="conv-med">5.32%</td>
-          <td>$15–30</td>
-          <td class="conv-med">55–70%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/magnetic-lashes" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/magnetic-lashes" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Анализатор удара / Swing Analyzer</div>
+            <div class="product-sub">Крепится к клюшке · phone app · AI анализ</div>
+          </td>
+          <td><span class="badge badge-purple">Гольф</span></td>
+          <td class="hook">"Прикрепил к клюшке — телефон показывает что не так в замахе. Тренер не нужен"</td>
+          <td>$30–80</td>
+          <td class="conv-med">50–60%</td>
+          <td class="num">Golf нишевой<br><span class="muted">High LTV</span></td>
+          <td><a href="https://www.tiktok.com/discover/golf-swing-analyzer" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://shop.tiktok.com/us/k/golf-swing-analyzer" class="ilink-store" target="_blank">🛒 TTS</a></td>
         </tr>
+
+        <tr class="cat-row"><td colspan="9">🌲 ОХОТА / OUTDOOR</td></tr>
 
         <tr>
           <td class="row-num">11</td>
-          <td><div class="product-name">Чистящие средства / Cleaning</div><div class="product-sub">ASMR cleaning → instant purchase</div></td>
-          <td><span class="badge badge-blue">Home</span></td>
-          <td class="num">124K <span class="muted">показов</span></td>
-          <td class="conv-high">35.23%</td>
-          <td>$12–35</td>
+          <td>
+            <div class="product-name">Монокуляр ночного видения</div>
+            <div class="product-sub">Night vision · доступный · $30–80</div>
+          </td>
+          <td><span class="badge badge-green">Охота</span></td>
+          <td class="hook">"В темноте вижу как кошка. $40 на Amazon — те же ощущения что у спецназа"</td>
+          <td>$30–80</td>
           <td class="conv-med">50–65%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/cleaning-products" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/cleaning-products" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td class="num">Вирал<br><span class="muted">#nightvision</span></td>
+          <td><a href="https://www.tiktok.com/discover/night-vision-monocular" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://www.amazon.com/s?k=night+vision+monocular" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
 
         <tr>
           <td class="row-num">12</td>
-          <td><div class="product-name">Privacy Screen Protector</div><div class="product-sub">Анти-шпион для телефона</div></td>
-          <td><span class="badge badge-blue">Tech</span></td>
-          <td class="num">7M <span class="muted">показов</span></td>
-          <td class="conv-high">13.28%</td>
-          <td>$10–20</td>
-          <td class="conv-high">65–75%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/privacy-screen-protector" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://www.amazon.com/s?k=privacy+screen+protector" class="ilink-store" target="_blank">🛒 Amazon</a></td>
+          <td>
+            <div class="product-name">Электронный манок на дичь</div>
+            <div class="product-sub">Bluetooth deer caller · звуки животных · 300м</div>
+          </td>
+          <td><span class="badge badge-green">Охота</span></td>
+          <td class="hook">"Нажал кнопку на телефоне — олень пришёл сам. Это не охота, это читы"</td>
+          <td>$20–60</td>
+          <td class="conv-med">55–70%</td>
+          <td class="num">Охота ниша<br><span class="muted">#deercall</span></td>
+          <td><a href="https://www.tiktok.com/discover/deer-caller" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://www.amazon.com/s?k=bluetooth+deer+caller" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
 
         <tr>
           <td class="row-num">13</td>
-          <td><div class="product-name">Корректор осанки</div><div class="product-sub">Posture corrector — health hack формат</div></td>
-          <td><span class="badge badge-blue">Health</span></td>
-          <td class="num">1M <span class="muted">показов</span></td>
-          <td class="conv-med">8.28%</td>
-          <td>$15–35</td>
-          <td class="conv-med">55–70%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/posture-corrector" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/posture-corrector" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Камера-ловушка (Trail Camera)</div>
+            <div class="product-sub">4K · ночное видение · SD карта · WiFi</div>
+          </td>
+          <td><span class="badge badge-green">Охота</span></td>
+          <td class="hook">"Поставил в лесу на ночь — утром 47 видео с оленями, кабанами и медведем"</td>
+          <td>$25–70</td>
+          <td class="conv-med">50–60%</td>
+          <td class="num">#trailcam вирал<br><span class="muted">TikTok</span></td>
+          <td><a href="https://www.tiktok.com/discover/trail-camera" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://www.amazon.com/s?k=trail+camera+4k" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
 
         <tr>
           <td class="row-num">14</td>
-          <td><div class="product-name">Чехол для телефона (POD)</div><div class="product-sub">Кастом дизайн, нишевые принты</div></td>
-          <td><span class="badge badge-blue">Tech + POD</span></td>
-          <td class="num">9M <span class="muted">показов</span></td>
-          <td class="conv-med">5.47%</td>
-          <td>$15–30</td>
-          <td class="conv-high">60–75%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/custom-phone-case" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://printify.com/app/products/phone-cases/" class="ilink-store" target="_blank">🛒 Printify</a></td>
+          <td>
+            <div class="product-name">LifeStraw / Фильтр воды выживания</div>
+            <div class="product-sub">Пьёшь из лужи · 99.9% бактерий убивает</div>
+          </td>
+          <td><span class="badge badge-green">Outdoor</span></td>
+          <td class="hook">"Опустил в грязную лужу — пьёт как из-под крана. Amazon #1 camping"</td>
+          <td>$15–25</td>
+          <td class="conv-high">60–70%</td>
+          <td class="num">Amazon #1<br><span class="muted">Survival ниша</span></td>
+          <td><a href="https://www.tiktok.com/discover/lifestraw" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://www.amazon.com/s?k=lifestraw" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
 
         <tr>
           <td class="row-num">15</td>
-          <td><div class="product-name">Плюшевый тюлень / Seal Plush</div><div class="product-sub">CLZ 30–60cm, cozy trend, gift</div></td>
-          <td><span class="badge badge-orange">Toys / Gift</span></td>
-          <td class="num">25.7M <span class="muted">продаж/мес</span></td>
-          <td class="conv-high">—</td>
-          <td>$12–25</td>
-          <td class="conv-med">50–65%</td>
-          <td><span class="badge badge-green">🔥 Топ</span></td>
-          <td><a href="https://www.tiktok.com/discover/seal-plush-toy" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/seal-plush" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Магнитная рыбалка / Magnet Fishing</div>
+            <div class="product-sub">400–1000кг неодимовый · со дна достаёшь всё</div>
+          </td>
+          <td><span class="badge badge-green">Outdoor</span></td>
+          <td class="hook">"Бросил магнит в реку — вытащил пистолет, велосипед и старинные монеты"</td>
+          <td>$20–60</td>
+          <td class="conv-high">65–75%</td>
+          <td class="num">Вирал<br><span class="muted">#magnetfishing</span></td>
+          <td><a href="https://www.tiktok.com/tag/magnetfishing" class="ilink" target="_blank">↗ #magnetfishing</a></td>
+          <td><a href="https://www.amazon.com/s?k=magnet+fishing+kit" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
+
+        <tr class="cat-row"><td colspan="9">⚡ ГАДЖЕТЫ-ЧИТЫ / EDC</td></tr>
 
         <tr>
           <td class="row-num">16</td>
-          <td><div class="product-name">Кофейные кружки (POD)</div><div class="product-sub">Witchcore, meme, niche refs</div></td>
-          <td><span class="badge badge-blue">Print-on-Demand</span></td>
-          <td class="num">5M <span class="muted">показов</span></td>
-          <td class="conv-med">6.23%</td>
-          <td>$15–25</td>
-          <td class="conv-high">60–70%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/coffee-mug" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://printify.com/app/products/mugs/" class="ilink-store" target="_blank">🛒 Printify</a></td>
+          <td>
+            <div class="product-name">Тепловизор для смартфона</div>
+            <div class="product-sub">FLIR-style · видишь тепло через стены</div>
+          </td>
+          <td><span class="badge badge-red">Гаджет</span></td>
+          <td class="hook">"Приложил к стене — видно где трубы, где изоляция плохая, где человек стоит"</td>
+          <td>$40–100</td>
+          <td class="conv-med">45–60%</td>
+          <td class="num">Вирал<br><span class="muted">#thermalcamera</span></td>
+          <td><a href="https://www.tiktok.com/discover/thermal-camera-phone" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://www.amazon.com/s?k=thermal+camera+phone+attachment" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
 
         <tr>
           <td class="row-num">17</td>
-          <td><div class="product-name">Тоут-бэг (Tote Bag)</div><div class="product-sub">Aesthetic, niche slogan bags</div></td>
-          <td><span class="badge badge-blue">Print-on-Demand</span></td>
-          <td class="num">4M <span class="muted">показов</span></td>
-          <td class="conv-med">6.30%</td>
-          <td>$15–30</td>
-          <td class="conv-high">65–78%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/tote-bag" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://printify.com/app/products/tote-bags/" class="ilink-store" target="_blank">🛒 Printify</a></td>
+          <td>
+            <div class="product-name">Электрическая мухобойка-ракетка</div>
+            <div class="product-sub">2500V · ASMR убийства комаров · виральный звук</div>
+          </td>
+          <td><span class="badge badge-red">Гаджет</span></td>
+          <td class="hook">"ASMR: комар + ракетка = хруст. 8M просмотров на одном видео"</td>
+          <td>$8–20</td>
+          <td class="conv-high">70–80%</td>
+          <td class="num">ASMR вирал<br><span class="muted">Лето = пик</span></td>
+          <td><a href="https://www.tiktok.com/discover/electric-fly-swatter" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://shop.tiktok.com/us/k/electric-fly-swatter" class="ilink-store" target="_blank">🛒 TTS</a></td>
         </tr>
 
         <tr>
           <td class="row-num">18</td>
-          <td><div class="product-name">Canada Is Not For Sale Hat</div><div class="product-sub">Nationalism play — реакция на Трампа</div></td>
-          <td><span class="badge badge-red">Controversy</span></td>
-          <td class="num">Вирал <span class="muted">2025</span></td>
-          <td class="conv-high">—</td>
-          <td>$45</td>
-          <td class="conv-high">65–75%</td>
-          <td><span class="badge badge-orange">Сезонный</span></td>
-          <td><a href="https://www.tiktok.com/discover/canada-is-not-for-sale" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://strongandfreehat.ca" class="ilink-store" target="_blank">🛒 strongandfree</a></td>
+          <td>
+            <div class="product-name">Металлодетектор — кладоискательство</div>
+            <div class="product-sub">Garrett-style · пляж + поля · $50–150</div>
+          </td>
+          <td><span class="badge badge-red">Гаджет</span></td>
+          <td class="hook">"Пошёл на пляж с металлодетектором — нашёл кольцо с бриллиантом и $40 монетами"</td>
+          <td>$50–150</td>
+          <td class="conv-med">45–55%</td>
+          <td class="num">Вирал<br><span class="muted">#metaldetecting</span></td>
+          <td><a href="https://www.tiktok.com/tag/metaldetecting" class="ilink" target="_blank">↗ #metaldetecting</a></td>
+          <td><a href="https://www.amazon.com/s?k=metal+detector+beach" class="ilink-store" target="_blank">🛒 Amazon</a></td>
         </tr>
+
+        <tr class="cat-row"><td colspan="9">👕 МЕРЧ ПО НИШАМ</td></tr>
 
         <tr>
           <td class="row-num">19</td>
-          <td><div class="product-name">Скин-кит / Skincare Set</div><div class="product-sub">K-beauty, snail mucin, serum bundles</div></td>
-          <td><span class="badge badge-orange">Beauty</span></td>
-          <td class="num">7M <span class="muted">показов</span></td>
-          <td class="conv-low">2.75%</td>
-          <td>$25–60</td>
-          <td class="conv-med">50–65%</td>
-          <td><span class="badge badge-green">Активен</span></td>
-          <td><a href="https://www.tiktok.com/discover/skincare-set" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://shop.tiktok.com/us/k/skincare-set" class="ilink-store" target="_blank">🛒 TTS</a></td>
+          <td>
+            <div class="product-name">Рыбалка / #FishTok мерч</div>
+            <div class="product-sub">Tribal identity · "I'd rather be fishing" · POD</div>
+          </td>
+          <td><span class="badge badge-blue">Мерч</span></td>
+          <td class="hook">"Рыбаки = племя. Мерч для своих: принты с рыбой, удочкой, мемами рыбаков"</td>
+          <td>$25–45</td>
+          <td class="conv-high">65–80%</td>
+          <td class="num">51.7M+ постов<br><span class="muted">#fishing TikTok</span></td>
+          <td><a href="https://www.tiktok.com/tag/fishing" class="ilink" target="_blank">↗ #fishing</a></td>
+          <td><a href="https://printify.com" class="ilink-store" target="_blank">🛒 Printify</a></td>
         </tr>
 
         <tr>
           <td class="row-num">20</td>
-          <td><div class="product-name">Gulf of America / Greenland Merch</div><div class="product-sub">Protest + pro-Trump аудитории</div></td>
-          <td><span class="badge badge-red">Controversy</span></td>
-          <td class="num">Вирал <span class="muted">2025</span></td>
-          <td class="conv-high">—</td>
-          <td>$35</td>
-          <td class="conv-high">65–75%</td>
-          <td><span class="badge badge-orange">Сезонный</span></td>
-          <td><a href="https://www.tiktok.com/discover/gulf-of-america" class="ilink" target="_blank">↗ TikTok</a></td>
-          <td><a href="https://www.amazon.com/s?k=gulf+of+america+shirt" class="ilink-store" target="_blank">🛒 Amazon</a></td>
+          <td>
+            <div class="product-name">Hunting / Outdoor tribe мерч</div>
+            <div class="product-sub">"Built different" · deer skull · camo aesthetics</div>
+          </td>
+          <td><span class="badge badge-green">Мерч</span></td>
+          <td class="hook">"Охотник / выживальщик / outdoor — их идентичность. Мерч носят с гордостью"</td>
+          <td>$25–50</td>
+          <td class="conv-high">65–80%</td>
+          <td class="num">Нишевой<br><span class="muted">High LTV</span></td>
+          <td><a href="https://www.tiktok.com/discover/hunting-merch" class="ilink" target="_blank">↗ TikTok</a></td>
+          <td><a href="https://printify.com" class="ilink-store" target="_blank">🛒 Printify</a></td>
         </tr>
 
       </tbody>
@@ -439,9 +397,9 @@
   </div>
 
   <div class="note">
-    <strong>Источники данных:</strong> Printify TikTok Trending Products 2026 (конверсии + показы) · Accio TikTok Hot Selling 2026 (объёмы продаж) · TikTok for Business / BlendJet Case Study · yellopolitics.com Nationalism Merch 2025 · прямой скрапинг jdrip.com, levelsio.com, strongandfreehat.ca ·
-    <strong>Конверсия</strong> = % зрителей, перешедших к покупке по TikTok Ads данным.
-    <strong>Controversy ниши</strong> — без точных конверсий, т.к. работают преимущественно через органику.
+    <strong>Источники:</strong> gillsee.us · canfishcam.com · Accio TikTok Hot Selling 2026 · westin-fishingcam.com · TikTok Shop категории · Amazon Best Sellers ·
+    <strong>Маржа</strong> = оценочная (цена продажи − себестоимость − шиппинг) ·
+    <strong>Лучший формат видео:</strong> "до/после" или "секрет который все скрывают" — для всех 20 продуктов
   </div>
 
   <div style="margin-top: 24px; font-size: 12px; color: #444;">
