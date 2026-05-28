@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TikTok Channel Analysis</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #0f0f0f; color: #e0e0e0; padding: 32px; }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 6px; color: #fff; }
+  .subtitle { font-size: 13px; color: #666; margin-bottom: 32px; }
+
+  .summary-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 32px; }
+  .card { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 20px; }
+  .card-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 8px; }
+  .card-value { font-size: 28px; font-weight: 700; color: #fff; }
+  .card-sub { font-size: 12px; color: #555; margin-top: 4px; }
+
+  .section-title { font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em; color: #555; margin-bottom: 14px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  thead th { background: #1a1a1a; color: #666; font-weight: 600; text-transform: uppercase; font-size: 11px; letter-spacing: 0.06em; padding: 12px 16px; text-align: left; border-bottom: 1px solid #2a2a2a; white-space: nowrap; }
+  tbody tr { border-bottom: 1px solid #1e1e1e; transition: background 0.15s; }
+  tbody tr:hover { background: #161616; }
+  tbody td { padding: 14px 16px; vertical-align: middle; }
+
+  .channel { display: flex; flex-direction: column; gap: 2px; }
+  .channel-name { font-weight: 600; color: #fff; font-size: 13px; text-decoration: none; }
+  a.channel-name:hover { color: #60a5fa; text-decoration: underline; }
+  .channel-link { font-size: 11px; color: #444; }
+
+  .tier { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border-radius: 8px; font-weight: 700; font-size: 12px; }
+  .tier-1 { background: #1a3a1a; color: #4ade80; }
+  .tier-2 { background: #1a2a3a; color: #60a5fa; }
+  .tier-3 { background: #2a1a1a; color: #f87171; }
+
+  .badge { display: inline-block; padding: 3px 8px; border-radius: 6px; font-size: 11px; font-weight: 500; }
+  .badge-drop { background: #1a2a3a; color: #60a5fa; }
+  .badge-brand { background: #1a3a2a; color: #34d399; }
+  .badge-scam { background: #3a1a1a; color: #f87171; }
+  .badge-traffic { background: #2a2a1a; color: #fbbf24; }
+  .badge-telegram { background: #1a1a3a; color: #a78bfa; }
+  .badge-igaming { background: #2a1a3a; color: #e879f9; }
+  .badge-app { background: #1a3a3a; color: #22d3ee; }
+  .badge-grey { background: #2a2a1a; color: #fb923c; }
+
+  .num { font-variant-numeric: tabular-nums; }
+  .num-big { font-size: 15px; font-weight: 700; color: #fff; }
+  .num-sub { font-size: 11px; color: #555; margin-top: 2px; }
+
+  .bar-wrap { width: 100px; height: 6px; background: #2a2a2a; border-radius: 3px; overflow: hidden; }
+  .bar { height: 100%; border-radius: 3px; }
+
+  .site { font-size: 11px; color: #555; max-width: 160px; word-break: break-all; }
+  .site a { color: #60a5fa; text-decoration: none; }
+  .site a:hover { text-decoration: underline; }
+
+  .revenue-est { font-size: 13px; font-weight: 600; color: #4ade80; }
+  .revenue-na { color: #444; font-size: 12px; }
+
+  .stars { color: #fbbf24; font-size: 13px; letter-spacing: -2px; }
+
+  .flag { font-size: 16px; }
+
+  .warn { color: #f87171; font-size: 11px; font-weight: 600; }
+
+  .footer { margin-top: 24px; font-size: 11px; color: #333; text-align: center; }
+
+  .table-wrap { background: #111; border: 1px solid #1e1e1e; border-radius: 14px; overflow: hidden; margin-bottom: 32px; }
+</style>
+</head>
+<body>
+
+<h1>TikTok Channel Analysis</h1>
+<p class="subtitle">Анализ 30 каналов · 28 мая 2026 · данные Apify</p>
+
+<div class="summary-cards">
+  <div class="card">
+    <div class="card-label">Каналов проанализировано</div>
+    <div class="card-value">30</div>
+    <div class="card-sub">обновлено 28.05.2026</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Топ просмотры (1 видео)</div>
+    <div class="card-value">136.7M</div>
+    <div class="card-sub">@mucindyfinds</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Лучший avg просмотры</div>
+    <div class="card-value">8M</div>
+    <div class="card-sub">@myfootzen (4 видео!)</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Лучший для репликации</div>
+    <div class="card-value">myfootzen</div>
+    <div class="card-sub">$150–400K за 2 месяца</div>
+  </div>
+</div>
+
+<p class="section-title">Детальный разбор каналов</p>
+<div class="table-wrap">
+<table>
+  <thead>
+    <tr>
+      <th>Тир</th>
+      <th>Канал</th>
+      <th>Модель</th>
+      <th>Что продаёт</th>
+      <th>Подписчики</th>
+      <th>Avg просмотры</th>
+      <th>Рекорд</th>
+      <th>Возраст акк.</th>
+      <th>Видео/день</th>
+      <th>Сайт / Ссылка</th>
+      <th>Продукт / Цена</th>
+      <th>Маржа</th>
+      <th>Оценка дохода</th>
+      <th>Виральность</th>
+      <th>Для Clippz?</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <!-- maskonmoney -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@maskonmoney" target="_blank">@maskonmoney</a>
+          <span class="channel-link">🇪🇸 Испания / 🌍</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">High-ticket</span></td>
+      <td style="font-size:12px;line-height:1.6">🎭 Силиконовые маски лица<br><small>реалистичные, ручная работа €185–1950</small></td>
+      <td class="num">234,500</td>
+      <td><div class="num-big">3,593,000</div></td>
+      <td><div class="num-big">86,200,000</div></td>
+      <td>2 года</td>
+      <td class="num">~0.0</td>
+      <td class="site"><a href="https://maskonmoney.com" target="_blank">maskonmoney.com</a></td>
+      <td>Силиконовые маски<br><strong>€185–1,950</strong></td>
+      <td>~60%</td>
+      <td class="revenue-est">$600K+ (1 видео)</td>
+      <td><span class="stars">★★★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Высокий чек</td>
+    </tr>
+
+    <!-- tienda.hacking -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@tienda.hacking" target="_blank">@tienda.hacking</a>
+          <span class="channel-link">🇨🇴 Колумбия / LATAM</span>
+        </div>
+      </td>
+      <td><span class="badge badge-grey">⚠️ Grey market</span></td>
+      <td style="font-size:12px;line-height:1.6">📡 Bluetooth jammers / ESP32<br><small>кибербезопасность, LATAM рынок</small></td>
+      <td class="num">6,257</td>
+      <td><div class="num-big">5,150,000</div><div class="num-sub">2 видео!</div></td>
+      <td><div class="num-big">9,200,000</div></td>
+      <td>19 дней</td>
+      <td class="num">~0.1</td>
+      <td class="site"><a href="https://tiendahacking.com" target="_blank">tiendahacking.com</a></td>
+      <td>Bluetooth jammer<br><strong>~$120</strong></td>
+      <td>$50–70</td>
+      <td class="revenue-est">$200–300K</td>
+      <td><span class="stars">★★★★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Легал.риск</td>
+    </tr>
+
+    <!-- exposrapp -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@exposrapp" target="_blank">@exposrapp</a>
+          <span class="channel-link">🇮🇪 Ирландия</span>
+        </div>
+      </td>
+      <td><span class="badge badge-app">SaaS / App</span></td>
+      <td style="font-size:12px;line-height:1.6">📱 iOS приложение EXPOSR<br><small>сканер состава еды, freemium</small></td>
+      <td class="num">99,900</td>
+      <td><div class="num-big">639,000</div></td>
+      <td><div class="num-big">6,400,000</div></td>
+      <td>10 мес</td>
+      <td class="num">0.3</td>
+      <td class="site"><a href="https://apps.apple.com/ie/app/exposr-food-product-scanner/id6752903766" target="_blank">App Store → EXPOSR</a></td>
+      <td>Сканер еды (iOS app)<br><strong>Freemium</strong></td>
+      <td>~90%</td>
+      <td class="revenue-est">$50–150K/мес</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Не товар</td>
+    </tr>
+
+    <!-- myfootzen -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@myfootzen" target="_blank">@myfootzen</a>
+          <span class="channel-link">🇺🇸 США</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">🦶 Акупунктурные тапочки-массажёр<br><small>массаж стоп, боль в ногах</small></td>
+      <td class="num">13,000</td>
+      <td><div class="num-big">8,000,000</div><div class="num-sub">4 видео</div></td>
+      <td><div class="num-big">28,200,000</div></td>
+      <td>2 мес</td>
+      <td class="num">~0.1</td>
+      <td class="site"><a href="https://myfootzen.store" target="_blank">myfootzen.store</a></td>
+      <td>Акупунктурные тапочки<br><strong>$30–50</strong></td>
+      <td>$20–35</td>
+      <td class="revenue-est">$150–400K</td>
+      <td><span class="stars">★★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА</td>
+    </tr>
+
+    <!-- cozycorobes -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@cozycorobes" target="_blank">@cozycorobes</a>
+          <span class="channel-link">🇺🇸 США</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">🔥 Халат с электроподогревом<br><small>heated robe, $119.99</small></td>
+      <td class="num">19,900</td>
+      <td><div class="num-big">1,200,000</div></td>
+      <td><div class="num-big">30,100,000</div></td>
+      <td>6 мес</td>
+      <td class="num">1.1</td>
+      <td class="site"><a href="https://cozycorobe.com" target="_blank">cozycorobe.com</a></td>
+      <td>Heated robe<br><strong>$119.99</strong></td>
+      <td>$50–70</td>
+      <td class="revenue-est">$300–600K</td>
+      <td><span class="stars">★★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА</td>
+    </tr>
+
+    <!-- bugbitething -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@bugbitething" target="_blank">@bugbitething</a>
+          <span class="channel-link">🇺🇸 США</span>
+        </div>
+      </td>
+      <td><span class="badge badge-brand">Brand</span></td>
+      <td style="font-size:12px;line-height:1.6">🦟 Прибор от укусов насекомых<br><small>электронейтрализатор, outdoor</small></td>
+      <td class="num">201,300</td>
+      <td><div class="num-big">3,862,000</div></td>
+      <td><div class="num-big">45,400,000</div></td>
+      <td>5+ лет</td>
+      <td class="num">~0.1</td>
+      <td class="site"><a href="https://linktr.ee/bugbitething" target="_blank">linktr.ee/bugbitething</a></td>
+      <td>Bug bite treatment<br><strong>$20–35</strong></td>
+      <td>$10–20</td>
+      <td class="revenue-est">$500K–1M+/год</td>
+      <td><span class="stars">★★★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Ниша</td>
+    </tr>
+
+    <!-- real.dentshop -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@real.dentshop" target="_blank">@real.dentshop</a>
+          <span class="channel-link">🇪🇸 Испания</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">🦷 3D U-образная зубная щётка<br><small>чистит все зубы за 30 сек</small></td>
+      <td class="num">3,382</td>
+      <td><div class="num-big">306,000</div></td>
+      <td><div class="num-big">5,600,000</div></td>
+      <td>3 мес</td>
+      <td class="num">1.8</td>
+      <td class="site"><a href="https://realdent.es" target="_blank">realdent.es</a></td>
+      <td>3D зубная щётка<br><strong>€5–30</strong></td>
+      <td>€3–15</td>
+      <td class="revenue-est">$30–80K</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА</td>
+    </tr>
+
+    <!-- motocross_clearance2 -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@motocross_clearance2" target="_blank">@motocross_clearance2</a>
+          <span class="channel-link">🇺🇸 США</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Clearance</span></td>
+      <td style="font-size:12px;line-height:1.6">🏍️ Outlet / clearance распродажа<br><small>urgency модель, $29.9</small></td>
+      <td class="num">5,843</td>
+      <td><div class="num-big">121,000</div></td>
+      <td><div class="num-big">1,500,000</div></td>
+      <td>2 мес</td>
+      <td class="num">0.8</td>
+      <td class="site"><a href="https://llisonda.com" target="_blank">llisonda.com</a></td>
+      <td>Clearance outlet<br><strong>$29.9</strong></td>
+      <td>$10–15</td>
+      <td class="revenue-est">$20–50K</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Возможно</td>
+    </tr>
+
+    <!-- klass.ts -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@klass.ts" target="_blank">@klass.ts</a>
+          <span class="channel-link">🇺🇦 Украина</span>
+        </div>
+      </td>
+      <td><span class="badge badge-telegram">Telegram</span></td>
+      <td style="font-size:12px;line-height:1.6">⛺ Палатки и кемпинг снаряжение<br><small>продажи через Telegram бот</small></td>
+      <td class="num">163,500</td>
+      <td><div class="num-big">68,000</div></td>
+      <td><div class="num-big">872,000</div></td>
+      <td>6 мес</td>
+      <td class="num">1.6</td>
+      <td class="site"><a href="https://t.me/nuzka_tsina" target="_blank">t.me → Telegram бот</a></td>
+      <td>Палатки / кемпинг<br><strong>TBD</strong></td>
+      <td>TBD</td>
+      <td class="revenue-est">~$50K</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ СНГ модель</td>
+    </tr>
+
+    <!-- dokterdrugs -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@dokterdrugs" target="_blank">@dokterdrugs</a>
+          <span class="channel-link">🌍 EN</span>
+        </div>
+      </td>
+      <td><span class="badge badge-traffic">YouTube funnel</span></td>
+      <td style="font-size:12px;line-height:1.6">📹 Funny clips → YouTube<br><small>нет товара, трафик на YT ads</small></td>
+      <td class="num">8,852</td>
+      <td><div class="num-big">399,000</div></td>
+      <td><div class="num-big">4,100,000</div></td>
+      <td>11 дней</td>
+      <td class="num">1.3</td>
+      <td class="site"><a href="https://youtube.com/@SkipperSalute" target="_blank">YouTube @SkipperSalute</a></td>
+      <td>Funny clips → YT ads</td>
+      <td>YT RPM</td>
+      <td class="revenue-est revenue-na">Минимально</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Нет товара</td>
+    </tr>
+
+    <!-- minecraftprojector -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@minecraftprojector" target="_blank">@minecraftprojector</a>
+          <span class="channel-link">🇺🇸 США</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">🎮 Minecraft проектор для детей<br><small>детская комната, €49.99</small></td>
+      <td class="num">24,400</td>
+      <td><div class="num-big">72,000</div></td>
+      <td><div class="num-big">2,000,000</div></td>
+      <td>14 мес</td>
+      <td class="num">0.8</td>
+      <td class="site"><a href="https://minecraftprojector.com" target="_blank">minecraftprojector.com</a></td>
+      <td>Minecraft projector<br><strong>€49.99</strong></td>
+      <td>€35–40</td>
+      <td class="revenue-est">$30–40K/мес</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Возможно</td>
+    </tr>
+
+    <!-- esplayzone -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@esplayzone" target="_blank">@esplayzone</a>
+          <span class="channel-link">🇪🇸 Испания</span>
+        </div>
+      </td>
+      <td><span class="badge badge-igaming">iGaming Affil.</span></td>
+      <td style="font-size:12px;line-height:1.6">🎰 Казино Betmen (iGaming)<br><small>CPA $100–300 за игрока</small></td>
+      <td class="num">605</td>
+      <td><div class="num-big">62,000</div></td>
+      <td><div class="num-big">565,000</div></td>
+      <td>2.5 года</td>
+      <td class="num">0.3</td>
+      <td class="site"><a href="https://frenzyslott.com" target="_blank">frenzyslott.com</a><br><span style="color:#f87171;font-size:10px">→ betmenaffiliates.com</span></td>
+      <td>Казино Betmen<br><strong>CPA $100–300</strong></td>
+      <td>Rev share 25–40%</td>
+      <td class="revenue-est">$40–70K/мес</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Гемблинг</td>
+    </tr>
+
+    <!-- glowwavex -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@glowwavex.com" target="_blank">@glowwavex.com</a>
+          <span class="channel-link">🌍 Global</span>
+        </div>
+      </td>
+      <td><span class="badge badge-grey">⚠️ Grey market</span></td>
+      <td style="font-size:12px;line-height:1.6">📺 MicroLord IR-пульт<br><small>управляет TV/кондиционерами</small></td>
+      <td class="num">28,300</td>
+      <td><div class="num-big">240,000</div></td>
+      <td><div class="num-big">6,600,000</div></td>
+      <td>15 мес</td>
+      <td class="num">0.1</td>
+      <td class="site"><a href="https://glowwavex.com" target="_blank">glowwavex.com</a></td>
+      <td>MicroLord IR-пульт<br><strong>$29.99</strong></td>
+      <td>$15–20</td>
+      <td class="revenue-est">$50–100K</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Серая зона</td>
+    </tr>
+
+    <!-- wood.arsenal -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@wood.arsenal" target="_blank">@wood.arsenal</a>
+          <span class="channel-link">🌍 Global</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">🪵 Деревянные реплики оружия<br><small>коллекционные, $17–220</small></td>
+      <td class="num">9,490</td>
+      <td><div class="num-big">75,000</div></td>
+      <td><div class="num-big">650,000</div></td>
+      <td>17 мес</td>
+      <td class="num">0.1</td>
+      <td class="site"><a href="https://woodarsenal.com" target="_blank">woodarsenal.com</a></td>
+      <td>Деревянные реплики<br><strong>$17–220</strong></td>
+      <td>$10–80</td>
+      <td class="revenue-est">$20–40K</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Нишевый</td>
+    </tr>
+
+    <!-- alhimik_ai -->
+    <tr>
+      <td><span class="tier tier-3">3</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@alhimik_ai" target="_blank">@alhimik_ai</a>
+          <span class="channel-link">🇷🇺 Россия</span>
+        </div>
+      </td>
+      <td><span class="badge badge-telegram">Telegram</span></td>
+      <td style="font-size:12px;line-height:1.6">🤖 AI контент → Telegram канал<br><small>нет физического товара</small></td>
+      <td class="num">5,683</td>
+      <td><div class="num-big">33,820</div></td>
+      <td><div class="num-big">279,000</div></td>
+      <td>3 мес</td>
+      <td class="num">1.0</td>
+      <td class="site"><a href="#" target="_blank">t.me → AI контент</a></td>
+      <td>AI tips → Telegram</td>
+      <td>—</td>
+      <td class="revenue-na">Не товарка</td>
+      <td><span class="stars">★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Нет</td>
+    </tr>
+
+    <!-- devouyerr -->
+    <tr>
+      <td><span class="tier tier-3">3</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@devouyerr" target="_blank">@devouyerr</a>
+          <span class="channel-link">🌍 Multi</span>
+        </div>
+      </td>
+      <td><span class="badge badge-traffic">Reposter</span></td>
+      <td style="font-size:12px;line-height:1.6">📰 Репостер корейских новостей<br><small>нет монетизации</small></td>
+      <td class="num">12,900</td>
+      <td><div class="num-big">1,360</div></td>
+      <td><div class="num-big">5,838</div></td>
+      <td>6 мес</td>
+      <td class="num">30.0</td>
+      <td class="site">—</td>
+      <td>Корейские новости</td>
+      <td>—</td>
+      <td class="revenue-na">$0 видимых</td>
+      <td><span class="stars">★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Нет</td>
+    </tr>
+
+    <!-- fundraisingforcancerkid -->
+    <tr>
+      <td><span class="tier tier-3">3</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@fundraisingforcancerkid" target="_blank">@fundraisingforcancerkid</a>
+          <a class="channel-name" href="https://www.tiktok.com/@fundraisingforhersurgery" target="_blank" style="font-size:11px;font-weight:400">+ @fundraisingforhersurgery</a>
+        </div>
+      </td>
+      <td><span class="badge badge-scam">⚠️ Charity scam</span></td>
+      <td style="font-size:12px;line-height:1.6">💸 Благотворительный скам<br><small>PayPal donations, мошенничество</small></td>
+      <td class="num">20,600 + 46,900</td>
+      <td><div class="num-big">2,928</div></td>
+      <td><div class="num-big">22,300</div></td>
+      <td>5 мес</td>
+      <td class="num">15.0</td>
+      <td class="site"><span class="warn">Один PayPal на оба аккаунта!</span></td>
+      <td>PayPal donations</td>
+      <td>100%</td>
+      <td class="warn">Мошенничество</td>
+      <td><span class="stars">★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Нет</td>
+    </tr>
+
+    <!-- ========== НОВЫЕ КАНАЛЫ — batch 2 (28.05.2026) ========== -->
+
+    <!-- pet..supplies -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@pet..supplies" target="_blank">@pet..supplies</a>
+          <span class="channel-link">🌍 Global / Pet niche</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">🐾 Гаджеты для питомцев<br><small>щётки, кормушки, pet tech</small></td>
+      <td class="num">2,700,000</td>
+      <td><div class="num-big">17,800,000</div></td>
+      <td><div class="num-big">96,200,000</div></td>
+      <td>~1 год</td>
+      <td class="num">~1.5</td>
+      <td class="site"><a href="https://linktr.ee/pet_supplies" target="_blank">linktr.ee/pet_supplies</a></td>
+      <td>Pet gadgets (tech)<br><strong>$20–60</strong></td>
+      <td>~55%</td>
+      <td class="revenue-est">$800K–2M/год</td>
+      <td><span class="stars">★★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА — pet виральность огромная</td>
+    </tr>
+
+    <!-- goodstuffdiary -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@goodstuffdiary" target="_blank">@goodstuffdiary</a>
+          <span class="channel-link">🌍 Global / Multi-product</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Affiliate + Drop</span></td>
+      <td style="font-size:12px;line-height:1.6">💆 Scalp massager + party lights<br><small>practical gadgets, mixed</small></td>
+      <td class="num">344,500</td>
+      <td><div class="num-big">3,400,000</div></td>
+      <td><div class="num-big">15,400,000</div></td>
+      <td>~8 мес</td>
+      <td class="num">~1.0</td>
+      <td class="site"><a href="https://linktr.ee/troou" target="_blank">linktr.ee/troou</a></td>
+      <td>Practical gadgets / finds<br><strong>$15–50</strong></td>
+      <td>~40%</td>
+      <td class="revenue-est">$80–200K/мес</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА — share rate 0.41%</td>
+    </tr>
+
+    <!-- realpeachy_official -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@realpeachy_official" target="_blank">@realpeachy_official</a>
+          <span class="channel-link">🇺🇸 USA / Fashion</span>
+        </div>
+      </td>
+      <td><span class="badge badge-brand">Brand</span></td>
+      <td style="font-size:12px;line-height:1.6">👗 Одежда / fashion / lifestyle<br><small>беременность, maternitywear</small></td>
+      <td class="num">628,500</td>
+      <td><div class="num-big">2,607,000</div></td>
+      <td><div class="num-big">18,000,000</div></td>
+      <td>~1.5 года</td>
+      <td class="num">~0.5</td>
+      <td class="site">TikTok Shop</td>
+      <td>Fashion / Lifestyle<br><strong>$25–80</strong></td>
+      <td>~45%</td>
+      <td class="revenue-est">$100–300K/мес</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Одежда = размеры/возвраты</td>
+    </tr>
+
+    <!-- honeymai06 -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@honeymai06" target="_blank">@honeymai06</a>
+          <span class="channel-link">🌍 TikTok Shop</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">TikTok Shop</span></td>
+      <td style="font-size:12px;line-height:1.6">👙 Бесшовное бельё / бра<br><small>comfort intimates, women</small></td>
+      <td class="num">99,300</td>
+      <td><div class="num-big">1,823,000</div></td>
+      <td><div class="num-big">16,600,000</div></td>
+      <td>~6 мес</td>
+      <td class="num">~1.0</td>
+      <td class="site"><a href="https://linktr.ee/honeymai06" target="_blank">linktr.ee/honeymai06</a></td>
+      <td>Bras / Intimates<br><strong>$20–40</strong></td>
+      <td>~55%</td>
+      <td class="revenue-est">$40–120K/мес</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА — боль (comfort) + women</td>
+    </tr>
+
+    <!-- ninjakitchen -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@ninjakitchen" target="_blank">@ninjakitchen</a>
+          <span class="channel-link">🌍 Global brand</span>
+        </div>
+      </td>
+      <td><span class="badge badge-brand">Brand</span></td>
+      <td style="font-size:12px;line-height:1.6">🍹 Кухонная техника Ninja<br><small>slushy makers, espresso, блендеры</small></td>
+      <td class="num">1,900,000</td>
+      <td><div class="num-big">580,000</div></td>
+      <td><div class="num-big">2,600,000</div></td>
+      <td>2+ года</td>
+      <td class="num">~0.3</td>
+      <td class="site"><a href="https://ninjakitchen.com" target="_blank">ninjakitchen.com</a></td>
+      <td>Kitchen appliances<br><strong>$80–200</strong></td>
+      <td>~40%</td>
+      <td class="revenue-est">Крупный бренд</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Анализ: restock urgency = 1.15% share</td>
+    </tr>
+
+    <!-- asmrvault0 -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@asmrvault0" target="_blank">@asmrvault0</a>
+          <span class="channel-link">🌍 ASMR / Organization</span>
+        </div>
+      </td>
+      <td><span class="badge badge-traffic">Traffic → Affiliate</span></td>
+      <td style="font-size:12px;line-height:1.6">🧺 Организация дома / restocks<br><small>Amazon finds, ASMR контент</small></td>
+      <td class="num">71,800</td>
+      <td><div class="num-big">85,700</div></td>
+      <td><div class="num-big">5,700,000</div></td>
+      <td>~4 мес</td>
+      <td class="num">~2.0</td>
+      <td class="site">TikTok Shop affiliate</td>
+      <td>Organization / Cleaning<br><strong>$10–30</strong></td>
+      <td>~35%</td>
+      <td class="revenue-est">$10–30K/мес</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА — ASMR формат масштабируется</td>
+    </tr>
+
+    <!-- simplify.bm -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@simplify.bm" target="_blank">@simplify.bm</a>
+          <span class="channel-link">🌍 Gadgets</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">✨ Гаджеты упрощающие жизнь<br><small>ASMR подача, Shopify</small></td>
+      <td class="num">1,389</td>
+      <td><div class="num-big">230,000</div></td>
+      <td><div class="num-big">2,300,000</div></td>
+      <td>~2 мес</td>
+      <td class="num">~1.0</td>
+      <td class="site">simplifybm.myshopify.com</td>
+      <td>Life gadgets<br><strong>$20–50</strong></td>
+      <td>~55%</td>
+      <td class="revenue-est">$15–40K/мес (ранняя стадия)</td>
+      <td><span class="stars">★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ ДА — 1.3K подп. → 2.3M просмотров!</td>
+    </tr>
+
+    <!-- essiby_store -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@essiby_store" target="_blank">@essiby_store</a>
+          <span class="channel-link">🌍 Unique gadgets</span>
+        </div>
+      </td>
+      <td><span class="badge badge-drop">Dropship</span></td>
+      <td style="font-size:12px;line-height:1.6">🛁 Spa ванна + romantic gifts<br><small>bubble bath gadget, gift boxes</small></td>
+      <td class="num">47,700</td>
+      <td><div class="num-big">430,000</div></td>
+      <td><div class="num-big">2,000,000</div></td>
+      <td>~5 мес</td>
+      <td class="num">~1.0</td>
+      <td class="site"><a href="https://linktr.ee/essiby.com" target="_blank">essiby.com</a></td>
+      <td>Tech gadgets<br><strong>$25–70</strong></td>
+      <td>~50%</td>
+      <td class="revenue-est">$20–50K/мес</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Ниша tech — высокая конкуренция</td>
+    </tr>
+
+    <!-- top10findshub -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@top10findshub" target="_blank">@top10findshub</a>
+          <span class="channel-link">🌍 Amazon finds</span>
+        </div>
+      </td>
+      <td><span class="badge badge-traffic">Amazon Affiliate</span></td>
+      <td style="font-size:12px;line-height:1.6">📦 Amazon kitchen gadgets<br><small>affiliate, Top-10 формат</small></td>
+      <td class="num">40,000</td>
+      <td><div class="num-big">4,300</div></td>
+      <td><div class="num-big">3,000,000</div></td>
+      <td>~6 мес</td>
+      <td class="num">~1.5</td>
+      <td class="site">Amazon affiliate links</td>
+      <td>Amazon finds (mixed)<br><strong>Affiliate %</strong></td>
+      <td>3–8% комиссия</td>
+      <td class="revenue-est">$5–20K/мес</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Amazon affiliate — не Clippz модель</td>
+    </tr>
+
+    <!-- devdoesreviews -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@devdoesreviews" target="_blank">@devdoesreviews</a>
+          <span class="channel-link">🌍 Product reviews</span>
+        </div>
+      </td>
+      <td><span class="badge badge-traffic">Review → Affiliate</span></td>
+      <td style="font-size:12px;line-height:1.6">⌚ Tech reviews (часы, камеры)<br><small>Casio, Insta360, wearables</small></td>
+      <td class="num">1,000,000</td>
+      <td><div class="num-big">397,000</div></td>
+      <td><div class="num-big">3,200,000</div></td>
+      <td>2+ года</td>
+      <td class="num">~0.5</td>
+      <td class="site">Mixed affiliate</td>
+      <td>Mixed reviews<br><strong>Affiliate</strong></td>
+      <td>~5%</td>
+      <td class="revenue-est">$30–80K/мес</td>
+      <td><span class="stars">★★★</span></td>
+      <td style="color:#fbbf24;font-weight:700">~ Формат интересен для клиппинга</td>
+    </tr>
+
+    <!-- mucindyfinds -->
+    <tr>
+      <td><span class="tier tier-1">1</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@mucindyfinds" target="_blank">@mucindyfinds</a>
+          <span class="channel-link">🌍 Viral finds</span>
+        </div>
+      </td>
+      <td><span class="badge badge-traffic">Affiliate</span></td>
+      <td style="font-size:12px;line-height:1.6">🛒 Temu affiliate (mixed)<br><small>136M рекорд, все категории</small></td>
+      <td class="num">446,300</td>
+      <td><div class="num-big">25,000</div></td>
+      <td><div class="num-big">136,700,000</div></td>
+      <td>~1 год</td>
+      <td class="num">~1.0</td>
+      <td class="site">TikTok Shop</td>
+      <td>Viral product finds<br><strong>Mixed</strong></td>
+      <td>~10–15%</td>
+      <td class="revenue-est">$20–60K/мес</td>
+      <td><span class="stars">★★★★★</span></td>
+      <td style="color:#4ade80;font-weight:700">✓ 136M рекорд — изучить что именно</td>
+    </tr>
+
+    <!-- floofyjawn -->
+    <tr>
+      <td><span class="tier tier-2">2</span></td>
+      <td>
+        <div class="channel">
+          <a class="channel-name" href="https://www.tiktok.com/@floofyjawn" target="_blank">@floofyjawn</a>
+          <span class="channel-link">🌍 Recommendations</span>
+        </div>
+      </td>
+      <td><span class="badge badge-traffic">Affiliate</span></td>
+      <td style="font-size:12px;line-height:1.6">🛏️ Постельное бельё / авточехлы<br><small>home & car accessories</small></td>
+      <td class="num">573,600</td>
+      <td><div class="num-big">673</div></td>
+      <td><div class="num-big">2,300,000</div></td>
+      <td>~1 год</td>
+      <td class="num">~0.5</td>
+      <td class="site">TikTok Shop</td>
+      <td>Mixed finds<br><strong>Affiliate</strong></td>
+      <td>~10%</td>
+      <td class="revenue-est">$5–15K/мес</td>
+      <td><span class="stars">★★</span></td>
+      <td style="color:#f87171;font-weight:700">✗ Низкий avg — пик на 1 видео</td>
+    </tr>
+
+  </tbody>
+</table>
+</div>
+
+<p class="section-title">Приоритеты для запуска через Clippz</p>
+<div class="summary-cards">
+  <div class="card" style="border-color:#2a4a2a">
+    <div class="card-label" style="color:#4ade80">🥇 Запуск 1</div>
+    <div class="card-value" style="font-size:18px">Foot Massager</div>
+    <div class="card-sub">По модели @myfootzen · 28M просмотры · шейры = лайкам · $20–35 маржа</div>
+  </div>
+  <div class="card" style="border-color:#1a3a4a">
+    <div class="card-label" style="color:#60a5fa">🥈 Запуск 2</div>
+    <div class="card-value" style="font-size:18px">Heated Robe</div>
+    <div class="card-sub">По модели @cozycorobes · $50+ маржа · лёгкий контент · 30M рекорд</div>
+  </div>
+  <div class="card" style="border-color:#3a2a1a">
+    <div class="card-label" style="color:#fbbf24">🥉 Запуск 3</div>
+    <div class="card-value" style="font-size:18px">Bug Bite Relief</div>
+    <div class="card-sub">Ниша outdoor · 45M просмотры · сезонный спрос · США рынок</div>
+  </div>
+  <div class="card">
+    <div class="card-label">Бюджет на тест (каждый)</div>
+    <div class="card-value" style="font-size:18px">$20–30K</div>
+    <div class="card-sub">Сначала через 100 своих · потом Clippz на 5K</div>
+  </div>
+</div>
+
+<p class="footer">Данные собраны через Apify clockworks/tiktok-scraper · 27.05.2026</p>
+
+</body>
+</html>

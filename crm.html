@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRM</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{font-size:62.5%}
+body{font-family:'Inter',sans-serif;font-size:1.4rem;background:#f4f5f7;color:#1a1a2e;display:flex;min-height:100vh}
+a{text-decoration:none;color:inherit}
+button{font-family:inherit;cursor:pointer}
+
+/* ─── SIDEBAR ─── */
+.sidebar{
+  width:220px;flex-shrink:0;
+  background:#1a1a2e;
+  display:flex;flex-direction:column;
+  position:fixed;top:0;left:0;bottom:0;
+  z-index:10;
+}
+.sidebar-logo{
+  padding:2.4rem 2rem;
+  font-size:1.6rem;font-weight:700;color:#fff;
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.sidebar-logo span{color:#5b8def}
+.sidebar-nav{flex:1;padding:1.6rem 0;overflow-y:auto}
+.nav-section{
+  font-size:1.1rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:rgba(255,255,255,.35);
+  padding:.6rem 2rem;margin-top:.8rem;
+}
+.nav-item{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 2rem;
+  font-size:1.35rem;font-weight:500;
+  color:rgba(255,255,255,.65);
+  border-radius:0;
+  cursor:pointer;
+  transition:background .15s,color .15s;
+}
+.nav-item:hover{background:rgba(255,255,255,.06);color:#fff}
+.nav-item.active{background:rgba(91,141,239,.18);color:#5b8def;border-right:3px solid #5b8def}
+.nav-icon{font-size:1.6rem;width:20px;text-align:center}
+
+/* ─── MAIN ─── */
+.main{margin-left:220px;flex:1;display:flex;flex-direction:column;min-height:100vh}
+.topbar{
+  background:#fff;
+  padding:0 3rem;height:60px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid #e5e7eb;
+  position:sticky;top:0;z-index:5;
+}
+.topbar-title{font-size:1.8rem;font-weight:700}
+.topbar-right{display:flex;align-items:center;gap:1.6rem}
+.btn{
+  padding:.8rem 1.6rem;border-radius:8px;
+  font-size:1.3rem;font-weight:600;border:none;
+  cursor:pointer;transition:opacity .15s;
+}
+.btn:hover{opacity:.85}
+.btn-primary{background:#5b8def;color:#fff}
+.btn-outline{background:#fff;color:#374151;border:1.5px solid #d1d5db}
+.content{padding:3rem;flex:1}
+
+/* ─── STATS ─── */
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1.6rem;
+  margin-bottom:2.8rem;
+}
+.stat-card{
+  background:#fff;border-radius:12px;
+  padding:2rem 2.4rem;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+}
+.stat-label{font-size:1.2rem;color:#6b7280;font-weight:500;margin-bottom:.6rem}
+.stat-val{font-size:2.8rem;font-weight:700;line-height:1}
+.stat-sub{font-size:1.2rem;color:#6b7280;margin-top:.4rem}
+.stat-sub .up{color:#10b981}
+.stat-sub .down{color:#ef4444}
+
+/* ─── TABLE CARD ─── */
+.card{
+  background:#fff;border-radius:12px;
+  box-shadow:0 1px 4px rgba(0,0,0,.06);
+  overflow:hidden;
+  margin-bottom:2rem;
+}
+.card-header{
+  padding:1.8rem 2.4rem;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid #f3f4f6;
+}
+.card-title{font-size:1.55rem;font-weight:700}
+.search-input{
+  padding:.7rem 1.2rem;border:1.5px solid #e5e7eb;border-radius:8px;
+  font-family:inherit;font-size:1.3rem;outline:none;width:220px;
+  transition:border-color .15s;
+}
+.search-input:focus{border-color:#5b8def}
+table{width:100%;border-collapse:collapse}
+thead th{
+  background:#f9fafb;
+  padding:1.1rem 2rem;
+  font-size:1.2rem;font-weight:600;
+  text-transform:uppercase;letter-spacing:.06em;
+  color:#9ca3af;text-align:left;
+  border-bottom:1px solid #f3f4f6;
+}
+tbody tr{border-bottom:1px solid #f9fafb;transition:background .1s}
+tbody tr:hover{background:#fafafa}
+tbody td{padding:1.4rem 2rem;font-size:1.35rem}
+.badge{
+  display:inline-block;padding:.3rem .9rem;
+  border-radius:20px;font-size:1.1rem;font-weight:600;
+}
+.badge-green{background:#d1fae5;color:#065f46}
+.badge-yellow{background:#fef3c7;color:#92400e}
+.badge-red{background:#fee2e2;color:#991b1b}
+.badge-blue{background:#dbeafe;color:#1e40af}
+.badge-gray{background:#f3f4f6;color:#374151}
+
+/* ─── PLACEHOLDER VIEWS ─── */
+.view{display:none}
+.view.active{display:block}
+.empty-state{
+  text-align:center;padding:6rem 2rem;
+  color:#9ca3af;
+}
+.empty-state .icon{font-size:4rem;margin-bottom:1.2rem}
+.empty-state p{font-size:1.5rem}
+</style>
+</head>
+<body>
+
+<!-- ─── SIDEBAR ─── -->
+<nav class="sidebar">
+  <div class="sidebar-logo">CRM <span>·</span> TikTok</div>
+  <div class="sidebar-nav">
+    <div class="nav-section">Главное</div>
+    <div class="nav-item active" onclick="showView('dashboard', this)">
+      <span class="nav-icon">📊</span> Дашборд
+    </div>
+    <div class="nav-section">Товарка</div>
+    <div class="nav-item" onclick="showView('products', this)">
+      <span class="nav-icon">📦</span> Продукты
+    </div>
+    <div class="nav-item" onclick="showView('orders', this)">
+      <span class="nav-icon">🛒</span> Заказы
+    </div>
+    <div class="nav-item" onclick="showView('stores', this)">
+      <span class="nav-icon">🏪</span> Магазины
+    </div>
+    <div class="nav-section">TikTok</div>
+    <div class="nav-item" onclick="showView('channels', this)">
+      <span class="nav-icon">🎵</span> Каналы
+    </div>
+    <div class="nav-item" onclick="showView('creators', this)">
+      <span class="nav-icon">🎬</span> Креаторы
+    </div>
+    <div class="nav-item" onclick="showView('videos', this)">
+      <span class="nav-icon">▶️</span> Видео
+    </div>
+    <div class="nav-section">Финансы</div>
+    <div class="nav-item" onclick="showView('finance', this)">
+      <span class="nav-icon">💰</span> Доходы
+    </div>
+    <div class="nav-item" onclick="showView('expenses', this)">
+      <span class="nav-icon">📉</span> Расходы
+    </div>
+  </div>
+</nav>
+
+<!-- ─── MAIN ─── -->
+<div class="main">
+  <div class="topbar">
+    <div class="topbar-title" id="page-title">Дашборд</div>
+    <div class="topbar-right">
+      <button class="btn btn-outline">⚙️ Настройки</button>
+      <button class="btn btn-primary">+ Добавить</button>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <!-- DASHBOARD -->
+    <div class="view active" id="view-dashboard">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-label">Выручка (месяц)</div>
+          <div class="stat-val">€0</div>
+          <div class="stat-sub"><span class="up">—</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Заказы</div>
+          <div class="stat-val">0</div>
+          <div class="stat-sub"><span class="up">—</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Активных продуктов</div>
+          <div class="stat-val">0</div>
+          <div class="stat-sub"><span class="up">—</span></div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">TikTok каналы</div>
+          <div class="stat-val">0</div>
+          <div class="stat-sub"><span class="up">—</span></div>
+        </div>
+      </div>
+      <div class="empty-state">
+        <div class="icon">🚀</div>
+        <p>Добавь первый продукт или канал чтобы начать</p>
+      </div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="view" id="view-products">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Продукты</span>
+          <input class="search-input" placeholder="Поиск...">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Продукт</th>
+              <th>Магазин</th>
+              <th>Цена</th>
+              <th>Заказов</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody id="products-body">
+            <tr><td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af">Нет данных</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- ORDERS -->
+    <div class="view" id="view-orders">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Заказы</span>
+          <input class="search-input" placeholder="Поиск...">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Продукт</th>
+              <th>Сумма</th>
+              <th>Дата</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af">Нет данных</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- STORES -->
+    <div class="view" id="view-stores">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Магазины</span>
+          <input class="search-input" placeholder="Поиск...">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Домен</th>
+              <th>Платформа</th>
+              <th>Продуктов</th>
+              <th>Выручка</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af">Нет данных</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CHANNELS -->
+    <div class="view" id="view-channels">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">TikTok каналы</span>
+          <input class="search-input" placeholder="Поиск...">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Канал</th>
+              <th>Подписчики</th>
+              <th>Просмотры (30д)</th>
+              <th>Продукт</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af">Нет данных</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- CREATORS -->
+    <div class="view" id="view-creators">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Креаторы</span>
+          <input class="search-input" placeholder="Поиск...">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Аккаунт</th>
+              <th>Подписчики</th>
+              <th>CPM</th>
+              <th>Нишa</th>
+              <th>Статус</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af">Нет данных</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- VIDEOS -->
+    <div class="view" id="view-videos">
+      <div class="card">
+        <div class="card-header">
+          <span class="card-title">Видео</span>
+          <input class="search-input" placeholder="Поиск...">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Видео</th>
+              <th>Канал</th>
+              <th>Просмотры</th>
+              <th>Лайки</th>
+              <th>Конверсия</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af">Нет данных</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- FINANCE -->
+    <div class="view" id="view-finance">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Доходы</span></div>
+        <div class="empty-state"><div class="icon">💰</div><p>Нет данных</p></div>
+      </div>
+    </div>
+
+    <!-- EXPENSES -->
+    <div class="view" id="view-expenses">
+      <div class="card">
+        <div class="card-header"><span class="card-title">Расходы</span></div>
+        <div class="empty-state"><div class="icon">📉</div><p>Нет данных</p></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const titles = {
+  dashboard:'Дашборд',products:'Продукты',orders:'Заказы',
+  stores:'Магазины',channels:'TikTok каналы',creators:'Креаторы',
+  videos:'Видео',finance:'Доходы',expenses:'Расходы'
+};
+
+function showView(name, el){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n=>n.classList.remove('active'));
+  document.getElementById('view-'+name).classList.add('active');
+  el.classList.add('active');
+  document.getElementById('page-title').textContent = titles[name]||name;
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kensho Beauty — Салон краси у Києві</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--ink:#0d0d0d;--white:#fafafa;--sage:#7d9b76;--ash:#a8a8a8;--line:#e2e2e2;--warm:#f5f3f0}
+body{font-family:'Plus Jakarta Sans',sans-serif;background:var(--white);color:var(--ink);overflow-x:hidden}
+
+nav{position:fixed;top:0;width:100%;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(250,250,250,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.logo{display:flex;flex-direction:column}
+.logo-main{font-family:'Shippori Mincho',serif;font-size:18px;letter-spacing:0.12em;color:var(--ink)}
+.logo-jp{font-size:9px;letter-spacing:0.3em;color:var(--ash);text-transform:uppercase;margin-top:2px}
+.nav-links{display:flex;gap:36px;list-style:none}
+.nav-links a{font-size:12px;letter-spacing:0.05em;color:var(--ash);text-decoration:none;transition:color 0.2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-reserve{padding:10px 22px;border:1px solid var(--ink);color:var(--ink);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:all 0.25s}
+.nav-reserve:hover{background:var(--ink);color:var(--white)}
+
+/* HERO */
+.hero{min-height:100vh;padding-top:80px;display:grid;grid-template-columns:1fr 1fr}
+.hero-left{padding:80px 60px;display:flex;flex-direction:column;justify-content:center;position:relative}
+.hero-left::after{content:'';position:absolute;right:0;top:10%;bottom:10%;width:1px;background:var(--line)}
+.hero-tag{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+.hero-tag-line{width:32px;height:1px;background:var(--sage)}
+.hero-tag span{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage)}
+.hero h1{font-family:'Shippori Mincho',serif;font-size:clamp(52px,6vw,88px);line-height:1.05;color:var(--ink);margin-bottom:28px;font-weight:400}
+.hero h1 .light{font-weight:400;color:var(--ash)}
+.hero-sub{font-size:14px;color:var(--ash);line-height:1.9;max-width:380px;margin-bottom:48px}
+.hero-rating{display:flex;align-items:center;gap:14px;padding:16px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:48px}
+.rating-num{font-family:'Shippori Mincho',serif;font-size:36px;color:var(--ink)}
+.rating-info{display:flex;flex-direction:column;gap:2px}
+.rating-stars{color:var(--sage);font-size:13px;letter-spacing:2px}
+.rating-count{font-size:11px;color:var(--ash)}
+.hero-btns{display:flex;gap:12px}
+.btn-dark{padding:15px 38px;background:var(--ink);color:var(--white);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;transition:background 0.2s}
+.btn-dark:hover{background:var(--sage)}
+.btn-ghost{padding:15px 38px;border:1px solid var(--line);color:var(--ink);text-decoration:none;font-size:11px;letter-spacing:0.1em;text-transform:uppercase;transition:all 0.2s}
+.btn-ghost:hover{border-color:var(--sage);color:var(--sage)}
+
+.hero-right{background:var(--ink);display:flex;flex-direction:column;padding:80px 60px}
+.hero-right-top{flex:1;display:flex;align-items:flex-start;padding-top:80px}
+.hero-kanji{font-family:'Shippori Mincho',serif;font-size:200px;color:rgba(255,255,255,0.03);line-height:1;user-select:none;position:relative;left:-20px}
+.hero-right-bottom{border-top:1px solid rgba(255,255,255,0.06);padding-top:32px}
+.services-list{display:flex;flex-direction:column;gap:0}
+.srv-line{display:flex;justify-content:space-between;align-items:center;padding:16px 0;border-bottom:1px solid rgba(255,255,255,0.05)}
+.srv-line:last-child{border-bottom:none}
+.srv-line-name{font-size:13px;color:rgba(255,255,255,0.5);letter-spacing:0.02em}
+.srv-line-price{font-size:13px;color:var(--sage)}
+
+/* PHILOSOPHY */
+.philosophy{padding:100px 60px;background:var(--warm);display:grid;grid-template-columns:1fr 2fr;gap:80px;align-items:center}
+.phil-label{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:16px}
+.phil-num{font-family:'Shippori Mincho',serif;font-size:120px;color:rgba(13,13,13,0.05);line-height:1}
+.phil-quote{font-family:'Shippori Mincho',serif;font-size:clamp(22px,2.5vw,34px);color:var(--ink);line-height:1.5;font-weight:400}
+.phil-quote em{color:var(--sage);font-style:normal}
+.phil-text{margin-top:24px;font-size:14px;color:var(--ash);line-height:1.9}
+
+/* SERVICES */
+.services{padding:90px 60px;background:#fff}
+.services-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:60px;padding-bottom:24px;border-bottom:1px solid var(--line)}
+.services-h{font-family:'Shippori Mincho',serif;font-size:40px;color:var(--ink)}
+.services-eyebrow{font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--sage);margin-bottom:8px}
+.srv-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line)}
+.srv-card{padding:36px 28px;border-right:1px solid var(--line);transition:background 0.2s}
+.srv-card:last-child{border-right:none}
+.srv-card:hover{background:var(--warm)}
+.srv-card-num{font-family:'Shippori Mincho',serif;font-size:13px;color:var(--line);margin-bottom:28px}
+.srv-card-name{font-family:'Shippori Mincho',serif;font-size:20px;color:var(--ink);margin-bottom:12px}
+.srv-card-list{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:24px}
+.srv-card-list li{font-size:12px;color:var(--ash);padding-left:12px;position:relative}
+.srv-card-list li::before{content:'·';position:absolute;left:0;color:var(--sage)}
+.srv-card-price{font-size:12px;color:var(--sage);letter-spacing:0.04em}
+
+/* TEAM / SOCIAL PROOF */
+.proof{padding:90px 60px;background:var(--ink)}
+.proof-inner{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.06)}
+.proof-block{background:var(--ink);padding:48px 40px}
+.proof-val{font-family:'Shippori Mincho',serif;font-size:56px;color:var(--white);margin-bottom:6px}
+.proof-label{font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:0.06em}
+.proof-review{padding:40px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);margin:0 60px 60px}
+.proof-review-stars{color:var(--sage);font-size:13px;letter-spacing:2px;margin-bottom:14px}
+.proof-review-text{font-family:'Shippori Mincho',serif;font-size:18px;color:rgba(255,255,255,0.6);line-height:1.7;font-style:italic;margin-bottom:16px}
+.proof-review-name{font-size:12px;color:rgba(255,255,255,0.2)}
+
+/* CTA */
+.cta{padding:100px 60px;background:var(--white);text-align:center}
+.cta-eyebrow{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--sage);margin-bottom:24px}
+.cta h2{font-family:'Shippori Mincho',serif;font-size:clamp(40px,5vw,64px);color:var(--ink);margin-bottom:14px;font-weight:400}
+.cta p{font-size:14px;color:var(--ash);margin-bottom:48px}
+.cta-phone{font-family:'Shippori Mincho',serif;font-size:42px;color:var(--ink);text-decoration:none;display:inline-block;margin-bottom:32px;transition:color 0.2s}
+.cta-phone:hover{color:var(--sage)}
+.cta-divider{width:1px;height:40px;background:var(--line);margin:0 auto 32px}
+.cta-msgs{display:flex;justify-content:center;gap:8px}
+.cm{padding:12px 24px;text-decoration:none;font-size:11px;font-weight:500;letter-spacing:0.06em}
+.cm-v{background:#7360f2;color:#fff}
+.cm-t{background:#2ca5e0;color:#fff}
+.cm-w{background:#25d366;color:#fff}
+.cta-address{margin-top:32px;font-size:12px;color:var(--ash);line-height:1.8}
+
+footer{padding:28px 60px;background:var(--ink);display:flex;justify-content:space-between;align-items:center}
+.fl{font-family:'Shippori Mincho',serif;font-size:16px;color:rgba(255,255,255,0.2);letter-spacing:0.12em}
+.fr{font-size:11px;color:rgba(255,255,255,0.15);text-align:right;line-height:1.9}
+
+@media(max-width:768px){
+nav{padding:14px 20px}.nav-links{display:none}
+.hero{grid-template-columns:1fr}.hero-left{padding:60px 20px}.hero-left::after{display:none}.hero-right{padding:40px 20px;min-height:280px}
+.hero-kanji{font-size:100px}
+.philosophy{padding:60px 20px;grid-template-columns:1fr;gap:24px}
+.services{padding:60px 20px}.srv-grid{grid-template-columns:1fr 1fr}.srv-card{border-right:none;border-bottom:1px solid var(--line)}
+.proof{padding:40px 0}.proof-inner{grid-template-columns:1fr 1fr}.proof-review{margin:0 20px 40px}
+.cta{padding:60px 20px}
+footer{padding:20px;flex-direction:column;gap:8px}.fr{text-align:left}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">
+    <div class="logo-main">KENSHO</div>
+    <div class="logo-jp">Beauty Salon · Київ</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Послуги</a></li>
+    <li><a href="#contact">Контакти</a></li>
+  </ul>
+  <a href="tel:+380686969696" class="nav-reserve">Записатись</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">
+      <div class="hero-tag-line"></div>
+      <span>Салон краси · Київ</span>
+    </div>
+    <h1>Краса<br>в<br><span class="light">чистоті</span></h1>
+    <div class="hero-rating">
+      <div class="rating-num">4.8</div>
+      <div class="rating-info">
+        <div class="rating-stars">★★★★★</div>
+        <div class="rating-count">39 відгуків у Google</div>
+      </div>
+    </div>
+    <p class="hero-sub">Мінімалізм у деталях. Максимум у результаті. Ми створюємо образи що говорять без слів — чисто, точно, бездоганно.</p>
+    <div class="hero-btns">
+      <a href="tel:+380686969696" class="btn-dark">Записатись</a>
+      <a href="#services" class="btn-ghost">Послуги</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-top">
+      <div class="hero-kanji">見</div>
+    </div>
+    <div class="hero-right-bottom">
+      <div class="services-list">
+        <div class="srv-line"><span class="srv-line-name">Жіноча стрижка + укладка</span><span class="srv-line-price">від 500 грн</span></div>
+        <div class="srv-line"><span class="srv-line-name">Фарбування</span><span class="srv-line-price">від 900 грн</span></div>
+        <div class="srv-line"><span class="srv-line-name">Манікюр гель-лак</span><span class="srv-line-price">від 580 грн</span></div>
+        <div class="srv-line"><span class="srv-line-name">Догляд за обличчям</span><span class="srv-line-price">від 700 грн</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="philosophy">
+  <div>
+    <div class="phil-label">Наш підхід</div>
+    <div class="phil-num">見性</div>
+  </div>
+  <div>
+    <div class="phil-quote">«Краса — це не маска.<br>Це <em>ваша справжня</em> природа,<br>яку ми допомагаємо розкрити.»</div>
+    <p class="phil-text">Kensho у перекладі з японської означає «побачити свою справжню природу». Саме цим ми займаємось кожного дня — підбираємо підхід, колір і форму, які підкреслюють унікальність кожної клієнтки. Без зайвого — лише те, що потрібно.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-head">
+    <div>
+      <div class="services-eyebrow">Прайс-лист</div>
+      <div class="services-h">Послуги</div>
+    </div>
+    <div style="font-size:12px;color:var(--ash)">вул. Василя Липківського, 16г</div>
+  </div>
+  <div class="srv-grid">
+    <div class="srv-card">
+      <div class="srv-card-num">01</div>
+      <div class="srv-card-name">Волосся</div>
+      <ul class="srv-card-list">
+        <li>Жіноча стрижка</li>
+        <li>Фарбування та омбре</li>
+        <li>Хайлайтинг</li>
+        <li>Кератин</li>
+      </ul>
+      <div class="srv-card-price">від 500 грн</div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-card-num">02</div>
+      <div class="srv-card-name">Нігті</div>
+      <ul class="srv-card-list">
+        <li>Манікюр гель-лак</li>
+        <li>Нарощування</li>
+        <li>Педикюр</li>
+        <li>Nail art</li>
+      </ul>
+      <div class="srv-card-price">від 580 грн</div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-card-num">03</div>
+      <div class="srv-card-name">Брови та вії</div>
+      <ul class="srv-card-list">
+        <li>Корекція форми</li>
+        <li>Ламінування брів</li>
+        <li>Нарощування вій</li>
+        <li>Перманентний макіяж</li>
+      </ul>
+      <div class="srv-card-price">від 350 грн</div>
+    </div>
+    <div class="srv-card">
+      <div class="srv-card-num">04</div>
+      <div class="srv-card-name">Обличчя</div>
+      <ul class="srv-card-list">
+        <li>Чистка шкіри</li>
+        <li>Масаж обличчя</li>
+        <li>Пілінг</li>
+        <li>Зволожуючі маски</li>
+      </ul>
+      <div class="srv-card-price">від 700 грн</div>
+    </div>
+  </div>
+</section>
+
+<section class="proof">
+  <div class="proof-inner">
+    <div class="proof-block">
+      <div class="proof-val">39</div>
+      <div class="proof-label">відгуків у Google</div>
+    </div>
+    <div class="proof-block">
+      <div class="proof-val">4.8★</div>
+      <div class="proof-label">середній рейтинг</div>
+    </div>
+    <div class="proof-block">
+      <div class="proof-val">300+</div>
+      <div class="proof-label">постійних клієнток</div>
+    </div>
+  </div>
+  <div class="proof-review">
+    <div class="proof-review-stars">★★★★★</div>
+    <p class="proof-review-text">"Salon дуже акуратний і мінімалістичний. Майстер точно зрозуміла що я хочу, результат перевершив очікування. Атмосфера спокійна, приємна. Повертатимусь!"</p>
+    <div class="proof-review-name">Тетяна В. · Google Reviews</div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="cta-eyebrow">Запис</div>
+  <h2>Ваш час — зараз</h2>
+  <p>Дзвоніть або пишіть у зручний месенджер — відповімо протягом 5 хвилин.</p>
+  <a href="tel:+380686969696" class="cta-phone">+380 68 696 96 96</a>
+  <div class="cta-divider"></div>
+  <div class="cta-msgs">
+    <a href="viber://chat?number=+380686969696" class="cm cm-v">Viber</a>
+    <a href="https://t.me/+380686969696" class="cm cm-t">Telegram</a>
+    <a href="https://wa.me/380686969696" class="cm cm-w">WhatsApp</a>
+  </div>
+  <div class="cta-address">вулиця Василя Липківського, 16г · Київ<br>Пн–Сб 9:00–20:00 · Нд 10:00–18:00</div>
+</section>
+
+<footer>
+  <div class="fl">KENSHO</div>
+  <div class="fr">вул. Василя Липківського, 16г · Київ<br>© 2024 Kensho Beauty Salon</div>
+</footer>
+
+</body>
+</html>

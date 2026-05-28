@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Юридична Компанія Київ — Адвокати та Юристи</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@300;400;500&display=swap');
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--navy:#0a1628;--blue:#1a3a6e;--accent:#4a90d9;--gold:#b8973e;--light:#f4f6fa;--text:#2c2c2c;--muted:#6b7280}
+body{font-family:'Inter',sans-serif;background:#fff;color:var(--text)}
+
+nav{position:fixed;top:0;width:100%;z-index:100;background:#fff;border-bottom:1px solid #eee;padding:16px 60px;display:flex;justify-content:space-between;align-items:center;box-shadow:0 1px 12px rgba(0,0,0,0.06)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--navy)}
+.logo span{color:var(--accent)}
+.nav-menu{display:flex;gap:28px;list-style:none}
+.nav-menu a{font-size:13px;color:var(--muted);text-decoration:none;font-weight:500;transition:color 0.2s}
+.nav-menu a:hover{color:var(--navy)}
+.nav-btn{padding:10px 24px;background:var(--navy);color:#fff;text-decoration:none;font-size:13px;font-weight:500;border-radius:4px;transition:background 0.2s}
+.nav-btn:hover{background:var(--blue)}
+
+/* HERO */
+.hero{padding:140px 60px 80px;background:var(--navy);position:relative;overflow:hidden;min-height:90vh;display:flex;align-items:center}
+.hero-bg{position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;max-width:1200px;margin:0 auto;position:relative;z-index:1}
+.hero-label{display:inline-block;padding:6px 14px;border:1px solid rgba(74,144,217,0.4);color:var(--accent);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:24px}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(36px,4vw,58px);line-height:1.15;color:#fff;margin-bottom:20px}
+.hero h1 span{color:var(--accent)}
+.hero-desc{font-size:15px;color:rgba(255,255,255,0.55);line-height:1.8;margin-bottom:36px}
+.hero-form{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:32px;border-radius:8px}
+.hero-form h3{font-family:'Cormorant Garamond',serif;font-size:22px;color:#fff;margin-bottom:6px}
+.hero-form p{font-size:13px;color:rgba(255,255,255,0.4);margin-bottom:24px}
+.form-field{margin-bottom:14px}
+.form-field input{width:100%;padding:12px 16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:#fff;font-size:14px;border-radius:4px;outline:none;font-family:'Inter',sans-serif}
+.form-field input::placeholder{color:rgba(255,255,255,0.3)}
+.form-field input:focus{border-color:var(--accent)}
+.form-submit{width:100%;padding:14px;background:var(--accent);color:#fff;border:none;font-size:14px;font-weight:600;cursor:pointer;border-radius:4px;transition:background 0.2s}
+.form-submit:hover{background:#3a7bc8}
+.form-note{font-size:11px;color:rgba(255,255,255,0.25);margin-top:10px;text-align:center}
+.hero-creds{display:flex;gap:32px;margin-top:40px;padding-top:32px;border-top:1px solid rgba(255,255,255,0.08)}
+.cred{display:flex;align-items:center;gap:10px}
+.cred-icon{font-size:20px}
+.cred-text{font-size:12px;color:rgba(255,255,255,0.4);line-height:1.5}
+.cred-text strong{display:block;color:#fff;font-size:14px}
+
+/* SERVICES */
+.services{padding:90px 60px;background:var(--light)}
+.services-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px}
+.section-label{font-size:11px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;margin-bottom:10px}
+.section-h2{font-family:'Cormorant Garamond',serif;font-size:38px;color:var(--navy)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.srv{background:#fff;padding:32px;border-radius:8px;border:1px solid #e8ecf4;transition:all 0.25s;cursor:default}
+.srv:hover{box-shadow:0 8px 32px rgba(10,22,40,0.1);transform:translateY(-2px)}
+.srv-icon{width:48px;height:48px;background:rgba(74,144,217,0.08);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:22px;margin-bottom:20px}
+.srv-title{font-size:16px;font-weight:600;color:var(--navy);margin-bottom:10px}
+.srv-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* PROCESS */
+.process{padding:90px 60px;background:#fff}
+.process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:50px;position:relative}
+.process-steps::before{content:'';position:absolute;top:28px;left:15%;right:15%;height:1px;background:linear-gradient(to right,var(--accent),var(--navy));z-index:0}
+.step{text-align:center;padding:0 16px;position:relative;z-index:1}
+.step-num{width:56px;height:56px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Cormorant Garamond',serif;font-size:22px;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.step-title{font-size:14px;font-weight:600;color:var(--navy);margin-bottom:8px}
+.step-desc{font-size:12px;color:var(--muted);line-height:1.6}
+
+/* CTA */
+.cta{padding:90px 60px;background:var(--navy);text-align:center}
+.cta h2{font-family:'Cormorant Garamond',serif;font-size:44px;color:#fff;margin-bottom:12px}
+.cta p{color:rgba(255,255,255,0.45);font-size:15px;margin-bottom:36px}
+.cta-phone{display:inline-block;font-family:'Cormorant Garamond',serif;font-size:36px;color:var(--accent);text-decoration:none;margin-bottom:28px}
+.cta-row{display:flex;justify-content:center;gap:12px}
+.cta-btn{padding:14px 28px;text-decoration:none;font-size:14px;font-weight:500;border-radius:4px}
+.cta-btn.viber{background:#7360f2;color:#fff}
+.cta-btn.tg{background:#2ca5e0;color:#fff}
+.cta-btn.wa{background:#25d366;color:#fff}
+
+footer{padding:32px 60px;background:var(--navy);border-top:1px solid rgba(255,255,255,0.06);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:18px;color:rgba(255,255,255,0.3)}
+.footer-info{font-size:12px;color:rgba(255,255,255,0.2);text-align:right}
+
+@media(max-width:768px){
+nav{padding:14px 20px}.nav-menu{display:none}
+.hero{padding:100px 20px 60px}.hero-grid{grid-template-columns:1fr}
+.services{padding:60px 20px}.services-grid{grid-template-columns:1fr}
+.process{padding:60px 20px}.process-steps{grid-template-columns:1fr 1fr;gap:24px}.process-steps::before{display:none}
+.cta{padding:60px 20px}
+footer{padding:24px 20px;flex-direction:column;gap:8px;text-align:center}.footer-info{text-align:center}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Юридична <span>Компанія</span></div>
+  <ul class="nav-menu">
+    <li><a href="#services">Послуги</a></li>
+    <li><a href="#process">Як ми працюємо</a></li>
+    <li><a href="#contact">Контакти</a></li>
+  </ul>
+  <a href="tel:+380443374727" class="nav-btn">Дзвонити</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid">
+    <div>
+      <div class="hero-label">Адвокати · Юристи · Київ</div>
+      <h1>Юридичний захист<br>якому можна <span>довіряти</span></h1>
+      <p class="hero-desc">Більше 90 задоволених клієнтів. Вирішуємо бізнесові та особисті юридичні питання швидко і прозоро.</p>
+      <div class="hero-creds">
+        <div class="cred"><div class="cred-icon">⚖️</div><div class="cred-text"><strong>90+ клієнтів</strong>відгуки у Google</div></div>
+        <div class="cred"><div class="cred-icon">📋</div><div class="cred-text"><strong>Фіксована ціна</strong>без сюрпризів</div></div>
+        <div class="cred"><div class="cred-icon">⚡</div><div class="cred-text"><strong>Відповідь за 1 год</strong>у робочий час</div></div>
+      </div>
+    </div>
+    <div class="hero-form">
+      <h3>Безкоштовна консультація</h3>
+      <p>Залиште номер — передзвонимо протягом години</p>
+      <div class="form-field"><input type="text" placeholder="Ваше ім'я"></div>
+      <div class="form-field"><input type="tel" placeholder="Номер телефону"></div>
+      <div class="form-field"><input type="text" placeholder="Коротко опишіть ситуацію"></div>
+      <button class="form-submit">Отримати консультацію →</button>
+      <p class="form-note">Конфіденційно · Безкоштовно · Без зобов'язань</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="services-header">
+    <div>
+      <div class="section-label">Практики</div>
+      <div class="section-h2">Напрямки роботи</div>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="srv"><div class="srv-icon">🏢</div><div class="srv-title">Господарські справи</div><div class="srv-desc">Корпоративні спори, захист бізнесу, стягнення заборгованості</div></div>
+    <div class="srv"><div class="srv-icon">🏠</div><div class="srv-title">Нерухомість</div><div class="srv-desc">Угоди купівлі-продажу, оренда, земельні питання, перевірка документів</div></div>
+    <div class="srv"><div class="srv-icon">👨‍👩‍👧</div><div class="srv-title">Сімейне право</div><div class="srv-desc">Розлучення, аліменти, розподіл майна, опіка над дітьми</div></div>
+    <div class="srv"><div class="srv-icon">💼</div><div class="srv-title">Трудові спори</div><div class="srv-desc">Незаконне звільнення, невиплата зарплати, трудові договори</div></div>
+    <div class="srv"><div class="srv-icon">⚖️</div><div class="srv-title">Судове представництво</div><div class="srv-desc">Ведення справ у всіх інстанціях, апеляції, касації</div></div>
+    <div class="srv"><div class="srv-icon">📄</div><div class="srv-title">Договірна робота</div><div class="srv-desc">Складання, перевірка та супровід договорів будь-якої складності</div></div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="section-label">Як ми працюємо</div>
+  <div class="section-h2">4 кроки до результату</div>
+  <div class="process-steps">
+    <div class="step"><div class="step-num">1</div><div class="step-title">Консультація</div><div class="step-desc">Безкоштовно оцінюємо вашу ситуацію та перспективи</div></div>
+    <div class="step"><div class="step-num">2</div><div class="step-title">Стратегія</div><div class="step-desc">Розробляємо план дій, узгоджуємо вартість і строки</div></div>
+    <div class="step"><div class="step-num">3</div><div class="step-title">Робота</div><div class="step-desc">Ведемо справу, тримаємо вас в курсі на кожному кроці</div></div>
+    <div class="step"><div class="step-num">4</div><div class="step-title">Результат</div><div class="step-desc">Захищаємо ваші інтереси до фінального рішення</div></div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <h2>Поговоримо про вашу справу</h2>
+  <p>Перша консультація безкоштовна. Дзвоніть прямо зараз.</p>
+  <a href="tel:+380443374727" class="cta-phone">+380 44 337 47 27</a>
+  <div class="cta-row">
+    <a href="viber://chat?number=+380443374727" class="cta-btn viber">Viber</a>
+    <a href="https://t.me/+380443374727" class="cta-btn tg">Telegram</a>
+    <a href="https://wa.me/380443374727" class="cta-btn wa">WhatsApp</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Юридична Компанія Київ</div>
+  <div class="footer-info">вул. Павла Скоропадського, 41 · Київ<br>Пн–Пт 9:00–18:00 · © 2024</div>
+</footer>
+
+</body>
+</html>
